@@ -46,6 +46,15 @@ Service {
 Homebrew::Formula <| |> -> Package <| |>
 
 node default {
+  # os defaults
+  include osx::global::enable_keyboard_control_access
+  include osx::dock::autohide
+  include osx::finder::show_all_on_desktop
+  include osx::disable_app_quarantine
+  include osx::no_network_dsstores
+  include osx::global::key_repeat_delay
+  include osx::global::key_repeat_rate
+
   # core modules, needed for most things
   include dnsmasq
   include git
@@ -67,7 +76,18 @@ node default {
     target => $boxen::config::repodir
   }
 
+  # browsers
+  include chrome
+  include firefox
+
+  # general development tools
   class { 'intellij':
     edition => 'ultimate'
   }
+
+  # system utilities
+  include alfred
+  include zsh
+  include sizeup
+  include dpkg
 }
