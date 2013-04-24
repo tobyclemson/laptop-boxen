@@ -48,12 +48,12 @@ Homebrew::Formula <| |> -> Package <| |>
 node default {
   # os defaults
   include osx::global::enable_keyboard_control_access
-  include osx::dock::autohide
+  #include osx::dock::autohide
   include osx::finder::show_all_on_desktop
   include osx::disable_app_quarantine
   include osx::no_network_dsstores
-  include osx::global::key_repeat_delay
-  include osx::global::key_repeat_rate
+  #include osx::global::key_repeat_delay
+  #include osx::global::key_repeat_rate
 
   # core modules, needed for most things
   include dnsmasq
@@ -81,8 +81,8 @@ node default {
   include firefox
 
   # general development tools
-  include vagrant
-  include virtualbox
+  #include vagrant
+  #include virtualbox
   class { 'intellij':
     edition => 'ultimate'
   }
