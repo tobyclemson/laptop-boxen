@@ -30,3 +30,4 @@ github "sudo",     "1.0.0"
 # https://github.com/boxen.
 
 github "java",     "1.0.6"
+github "intellij", "1.1.3"

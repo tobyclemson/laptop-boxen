@@ -66,4 +66,8 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
+
+  class { 'intellij':
+    edition => 'ultimate'
+  }
 }

@@ -24,29 +24,9 @@ GITHUBTARBALL
     homebrew (1.1.2)
 
 GITHUBTARBALL
-  remote: boxen/puppet-hub
+  remote: boxen/puppet-java
   specs:
-    hub (1.0.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-nginx
-  specs:
-    nginx (1.1.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-nodejs
-  specs:
-    nodejs (1.0.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-nvm
-  specs:
-    nvm (1.0.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-ruby
-  specs:
-    ruby (3.1.0)
+    java (1.0.6)
 
 GITHUBTARBALL
   remote: boxen/puppet-sudo
@@ -69,12 +49,8 @@ DEPENDENCIES
   gcc (= 1.0.0)
   git (= 1.0.0)
   homebrew (= 1.1.2)
-  hub (= 1.0.0)
   inifile (= 0.9.0)
-  nginx (= 1.1.0)
-  nodejs (= 1.0.0)
-  nvm (= 1.0.0)
-  ruby (= 3.1.0)
+  java (= 1.0.6)
   stdlib (= 3.0.0)
   sudo (= 1.0.0)
 
