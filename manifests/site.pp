@@ -81,6 +81,8 @@ node default {
   include firefox
 
   # general development tools
+  include vagrant
+  include virtualbox
   class { 'intellij':
     edition => 'ultimate'
   }
