@@ -89,13 +89,18 @@ node default {
   # general development tools
   include vagrant
   include virtualbox
+  include heroku
   class { 'intellij':
     edition => 'ultimate',
     version => '12.1.4'
   }
 
   # system utilities
+  include sublime_text_2
+  include skype
+  include vlc
   include alfred
+  include caffeine
   include zsh
   include sizeup
   include dpkg
