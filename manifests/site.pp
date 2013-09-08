@@ -8,6 +8,9 @@ Exec {
   user        => $boxen_user,
 
   path => [
+    "${boxen::config::home}/rbenv/shims",
+    "${boxen::config::home}/rbenv/bin",
+    "${boxen::config::home}/rbenv/plugins/ruby-build/bin",
     "${boxen::config::home}/homebrew/bin",
     '/usr/bin',
     '/bin',
@@ -51,22 +54,33 @@ Homebrew::Formula <| |> -> Package <| |>
 node default {
   # os defaults
   include osx::global::enable_keyboard_control_access
+  include osx::global::expand_print_dialog
+  include osx::global::expand_save_dialog
+  include osx::global::disable_remote_control_ir_receiver
+  include osx::global::key_repeat_rate
+  class { 'osx::global::key_repeat_delay': delay => 10 }
+
   include osx::dock::autohide
+  include osx::dock::icon_size
+
   include osx::finder::show_all_on_desktop
+  include osx::finder::empty_trash_securely
+  include osx::finder::unhide_library
+
   include osx::disable_app_quarantine
   include osx::no_network_dsstores
   include osx::software_update
-  include osx::global::key_repeat_rate
-  class { 'osx::global::key_repeat_delay':
-    delay => 10
-  }
 
   # core modules, needed for most things
   include dnsmasq
   include git
+  include hub
+  include nginx
 
-  # we'll be needing Java
-  include java
+  # fail if FDE is not enabled
+  if $::root_encrypted == 'no' {
+    fail('Please enable full disk encryption and try again')
+  }
 
   # common, useful packages
   package {
@@ -77,10 +91,25 @@ node default {
     ]:
   }
 
-  file { "${boxen::config::srcdir}/our-boxen":
+  file { "${boxen::config::srcdir}/laptop-boxen":
     ensure => link,
     target => $boxen::config::repodir
   }
+
+  # languages
+  include java
+  include clojure
+  include python
+
+  include nodejs::v0_4
+  include nodejs::v0_6
+  include nodejs::v0_8
+  include nodejs::v0_10
+
+  include ruby::1_8_7
+  include ruby::1_9_2
+  include ruby::1_9_3
+  include ruby::2_0_0
 
   # browsers
   include chrome
@@ -95,13 +124,40 @@ node default {
     version => '12.1.4'
   }
 
-  # system utilities
+  # databases
+  include postgresql
+  include mysql
+  include mongodb
+  include couchdbx
+
+  # text editors
+  include emacs
+  include textmate
   include sublime_text_2
-  include skype
-  include vlc
+
+  # system utilities
   include alfred
   include caffeine
-  include zsh
   include sizeup
+  include onepassword
+  include zsh
+  include screen
   include dpkg
+  include wget
+  include autojump
+  include scons
+  include ctags
+  include tmux
+
+  # applications
+  include evernote
+  include omnigraffle::pro
+  include dropbox
+  include googledrive
+  include kindle
+  include skype
+  include transmission
+  include vlc
+  include libreoffice
+  class { 'libreoffice::languagepack': locale => 'en-GB' }
 }
