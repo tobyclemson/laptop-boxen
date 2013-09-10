@@ -132,6 +132,7 @@ node default {
 
   # text editors
   include emacs
+  include prelude
   include textmate
   include sublime_text_2
 
@@ -140,7 +141,11 @@ node default {
   include caffeine
   include sizeup
   include onepassword
+
+  # command line enhancements
+  include terminal_customisations
   include zsh
+  include zsh_customisations
   include screen
   include dpkg
   include wget
