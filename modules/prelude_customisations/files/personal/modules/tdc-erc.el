@@ -1,4 +1,3 @@
-(require 'packages)
 (require 'todochiku)
 (require 'erc-join)
 
@@ -50,3 +49,5 @@
 (add-hook 'erc-text-matched-hook 'notify-nick-mentioned)
 (add-hook 'erc-server-PRIVMSG-functions 'notify-privmsg t)
 (add-hook 'erc-server-PRIVMSG-functions 'erc-server-PRIVMSG t)
+
+(provide 'tdc-erc)

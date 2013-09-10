@@ -9,3 +9,5 @@
        "Window '%s' is normal")
    (current-buffer)))
 (global-set-key (kbd "C-c j") 'toggle-window-dedication)
+
+(provide 'tdc-ui)

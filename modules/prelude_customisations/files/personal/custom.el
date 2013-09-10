@@ -9,6 +9,7 @@
  '(fci-rule-color "#383838")
  '(js-indent-level 2)
  '(markdown-indent-on-enter nil)
+ '(multi-term-program nil)
  '(nxml-child-indent 2)
  '(projectile-completion-system (quote ido))
  '(python-indent-offset 4)

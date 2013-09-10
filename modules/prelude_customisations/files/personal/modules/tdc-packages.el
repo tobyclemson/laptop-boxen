@@ -8,4 +8,4 @@
            (package-install package))))
  '(todochiku))
 
-(provide 'packages)
+(provide 'tdc-packages)

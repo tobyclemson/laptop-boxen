@@ -3,3 +3,5 @@
   (let ((shell-file-name "/bin/bash"))
     ad-do-it))
 (ad-activate 'rspec-compile)
+
+(provide 'tdc-rspec)
