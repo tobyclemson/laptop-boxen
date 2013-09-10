@@ -1,3 +1,4 @@
+(require 'packages)
 (require 'todochiku)
 (require 'erc-join)
 
