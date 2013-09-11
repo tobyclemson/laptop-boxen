@@ -7,14 +7,14 @@ class prelude_customisations {
   file { "$emacsd_dir/personal":
     ensure => 'directory',
     recurse => 'true',
-    source => "puppet:///modules/prelude_customisations/personal",
+    source => "puppet:///modules/prelude_customisations/emacs.d/personal",
     require => Class['prelude']
   }
 
   file { "$emacsd_dir/themes":
     ensure => 'directory',
     recurse => 'true',
-    source => "puppet:///modules/prelude_customisations/themes",
+    source => "puppet:///modules/prelude_customisations/emacs.d/themes",
     require => Class['prelude']
   }
 }
