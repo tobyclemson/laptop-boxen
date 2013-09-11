@@ -1,4 +1,4 @@
-class prelude_customisations {
+class emacs_customisations {
   require prelude
 
   $home_dir = "/Users/${::luser}"
