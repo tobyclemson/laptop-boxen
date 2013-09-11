@@ -7,7 +7,7 @@ class terminal_customisations {
     merge_path => ":'Window Settings'",
   }
 
-  boxen::osx_defaults { 'Use IR_Black by default':
+  boxen::osx_defaults { 'Use IR_Black in startup window':
     key => "Startup Window Settings",
     value => "IR_Black",
     domain => 'com.apple.Terminal',
@@ -15,4 +15,13 @@ class terminal_customisations {
     ensure => 'present',
     require => Plistmerge['Add IR_Black profile']
   }
+
+  boxen::osx_defaults { 'Use IR_Black by default':
+    key => "Default Window Settings",
+    value => "IR_Black",
+    domain => 'com.apple.Terminal',
+    user => $::boxen_user,
+    ensure => 'present',
+    require => Plistmerge['Add IR_Black profile']
+  }  
 }
