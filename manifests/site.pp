@@ -132,8 +132,8 @@ node default {
 
   # text editors
   include emacs
+  include emacs_customisations
   include prelude
-  include prelude_customisations
   include textmate
   include sublime_text_2
 
