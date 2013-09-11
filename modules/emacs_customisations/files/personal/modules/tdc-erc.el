@@ -1,3 +1,4 @@
+(prelude-ensure-module-deps '(todochiku))
 (require 'todochiku)
 (require 'erc-join)
 

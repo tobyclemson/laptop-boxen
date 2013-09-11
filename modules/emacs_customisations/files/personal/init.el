@@ -3,7 +3,6 @@
 
 (add-to-list 'load-path tdc-modules-dir)
 
-(require 'tdc-packages)
 (require 'tdc-themes)
 (require 'tdc-rspec)
 (require 'tdc-ui)
