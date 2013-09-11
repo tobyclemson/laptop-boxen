@@ -10,11 +10,4 @@ class emacs_customisations {
     source => "puppet:///modules/emacs_customisations/personal",
     require => Class['prelude']
   }
-
-  file { "$emacsd_dir/themes":
-    ensure => 'directory',
-    recurse => 'true',
-    source => "puppet:///modules/emacs_customisations/themes",
-    require => Class['prelude']
-  }
 }
