@@ -1,6 +1,5 @@
-(prelude-ensure-module-deps '(todochiku))
-(require 'todochiku)
 (require 'erc-join)
+(require 'tdc-todochiku)
 
 (erc-autojoin-enable)
 
@@ -11,10 +10,15 @@
 (setq erc-nick "tobyclemson")
 (setq erc-auto-query "frame")
 
+(add-to-list 'auth-source-protocols '(irc "irc" "6667"))
+
+(add-to-list 'erc-modules 'spelling)
+(add-to-list 'erc-modules 'keep-place)
+(add-to-list 'erc-modules 'log)
+
 (defun connect-to (irc-server-url)
   (erc :server irc-server-url
-       :nick "tobyclemson"
-       :password "1ct203ja"))
+       :nick "tobyclemson"))
 
 (defun connect-to-freenode-irc ()
   (interactive)

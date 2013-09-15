@@ -4,6 +4,7 @@
 (add-to-list 'load-path tdc-modules-dir)
 
 (require 'tdc-themes)
+(require 'tdc-todochiku)
 (require 'tdc-rspec)
 (require 'tdc-ui)
 (require 'tdc-erc)
