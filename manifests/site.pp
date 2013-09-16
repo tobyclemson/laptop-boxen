@@ -143,6 +143,7 @@ node default {
   include sizeup
   include onepassword
   include rsa_securid
+  include silverlight
 
   # command line enhancements
   include terminal_customisations
