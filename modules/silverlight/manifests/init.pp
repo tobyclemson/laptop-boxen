@@ -1,7 +1,7 @@
 class silverlight {
   package { 'Silverlight':
     provider => 'pkgdmg',
-    source => "http://go.microsoft.com/fwlink/?LinkID=229322",
+    source => "http://silverlight.dlservice.microsoft.com/download/B/3/C/B3CF6815-40B1-4E36-8746-C4A0381AD260/20513.00/runtime/Silverlight.dmg",
     ensure => 'installed'
   }
 }
