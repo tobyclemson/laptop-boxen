@@ -11,7 +11,6 @@
  '(markdown-indent-on-enter nil)
  '(multi-term-program nil)
  '(nxml-child-indent 2)
- '(projectile-completion-system (quote ido))
  '(python-indent-offset 4)
  '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)))
  '(vc-annotate-background "#2B2B2B")
