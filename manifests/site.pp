@@ -142,6 +142,7 @@ node default {
   include caffeine
   include sizeup
   include onepassword
+  include rsa_securid
 
   # command line enhancements
   include terminal_customisations
