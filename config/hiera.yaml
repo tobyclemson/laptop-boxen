@@ -1,0 +1,6 @@
+:backends:
+  - yaml
+:yaml:
+  :datadir: %{config.repodir}/config/secrets
+:hierarchy:
+  - common
