@@ -1,0 +1,6 @@
+[submodule "secrets"]
+	path = secrets
+	url = git@github.com:tobyclemson/secrets.git
+[submodule "config/secrets"]
+	path = config/secrets
+	url = git@github.com:tobyclemson/secrets.git
