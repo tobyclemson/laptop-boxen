@@ -1,6 +1,7 @@
 :backends:
   - yaml
 :yaml:
-  :datadir: %{config.repodir}/config/secrets
+  :datadir: %{::boxen_repodir}/config/secrets
 :hierarchy:
+  - identity
   - common
