@@ -1,4 +1,4 @@
-class rsa_securid($identity) {
+class rsa_securid($identity = '') {
   $home_dir = "/Users/${::luser}"
 
   package { 'RSA SecurID':
