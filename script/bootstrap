@@ -3,6 +3,10 @@
 
 set -e
 
+# Update git submodules
+git submodule init
+git submodule update
+
 # FIX: only sudo if gem home isn't writable
 
 (/usr/bin/gem list -i bundler -v '~> 1.3.0' > /dev/null) || {
