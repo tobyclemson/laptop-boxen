@@ -7,12 +7,12 @@ class rsa_securid($identity = '') {
     ensure => 'installed'
   }
 
-  file { '$home_dir/tclemson-identity.sdtid':
+  file { "$home_dir/tclemson-identity.sdtid":
     content => $identity,
     ensure => 'present'
   }
 
-  file { '$home_dir/boxen_home':
+  file { "$home_dir/boxen_home":
     content => $::boxen_home,
     ensure => 'present'
   }
