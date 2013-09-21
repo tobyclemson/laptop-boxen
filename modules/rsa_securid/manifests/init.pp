@@ -36,14 +36,14 @@ class rsa_securid(
   }
 
   exec { 'copy-token-importer':
-    command => "cp $securid_utils_volume_token_importer $securid_token_importer"
+    command => "cp $securid_utils_volume_token_importer $securid_token_importer",
     creates => $securid_token_importer,
     require => Exec["open $securid_utils_dmg"],
     unless => $securid_token_importer_test
   }
 
   exec { 'unmount-securid-utils':
-    command => "umount $securid_utils_volume"
+    command => "umount $securid_utils_volume",
     require => Exec['open-securid-utils', 'copy-token-importer'],
     unless => $securid_token_importer_test
   }
