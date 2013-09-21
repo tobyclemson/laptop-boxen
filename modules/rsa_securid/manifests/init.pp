@@ -4,7 +4,10 @@ class rsa_securid(
 ) {
   $home_dir = "/Users/${::boxen_user}"
   $temp_dir = "$boxen_home/tmp/rsa_securid"
+  $securid_token_dmg_url = "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMac412.dmg"
+  $securid_utils_dmg_url = "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMacUtils412.dmg"
   $securid_utils_dmg = "$temp_dir/rsa_securid_mac_utils.dmg"
+  $securid_utils_dmg_test = "test -f $securid_utils_dmg"
   $securid_utils_volume = "/Volumes/RSASecurIDUtils412"
   $securid_utils_volume_token_importer = "$securid_utils_volume/Tokenimporter"
   $securid_token_importer = "$temp_dir/tokenimporter"
@@ -13,7 +16,7 @@ class rsa_securid(
 
   package { 'RSA SecurID':
     provider => 'pkgdmg',
-    source => "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMac412.dmg",
+    source => $securid_token_dmg_url,
     ensure => 'installed'
   }
 
@@ -22,10 +25,10 @@ class rsa_securid(
     recurse => true
   }
 
-  file { $securid_utils_dmg:
-    source => "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMacUtils412.dmg",
-    ensure => 'present',
-    require => File[$temp_dir]
+  exec { 'fetch-securid-utils':
+    command => "wget $securid_utils_dmg_url -O $securid_utils_dmg",
+    require => File[$temp_dir],
+    unless => $securid_utils_dmg_test
   }
 
   exec { 'open-securid-utils':
