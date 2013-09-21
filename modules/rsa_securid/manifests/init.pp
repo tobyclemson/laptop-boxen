@@ -51,12 +51,18 @@ class rsa_securid(
     unless => $securid_token_importer_test
   }
 
-  file { $securid_identity:
+  file { 'create-identity-file':
+    name => $securid_identity,
     content => $identity,
-    ensure => 'present'
+    ensure => 'present',
+    require => File[$temp_dir]
   }
 
   exec { 'import-token':
     command => "$securid_token_importer -f $securid_identity -p $password",
+    require => [
+      File['create-identity-file'],
+      Exec['copy-token-importer']
+    ]
   }
 }
