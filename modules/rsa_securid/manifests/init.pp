@@ -3,7 +3,8 @@ class rsa_securid(
   $password
 ) {
   $home_dir = "/Users/${::boxen_user}"
-  $temp_dir = "$boxen_home/tmp/rsa_securid"
+  $temp_dir = "$boxen_home/tmp"
+  $securid_temp_dir = "$temp_dir/rsa_securid"
   $securid_token_dmg_url = "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMac412.dmg"
   $securid_utils_dmg_url = "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMacUtils412.dmg"
   $securid_utils_dmg = "$temp_dir/rsa_securid_mac_utils.dmg"
@@ -20,14 +21,13 @@ class rsa_securid(
     ensure => 'installed'
   }
 
-  file { $temp_dir:
+  file { [$temp_dir, $securid_temp_dir]:
     ensure => 'directory',
-    recurse => true
   }
 
   exec { 'fetch-securid-utils':
     command => "wget $securid_utils_dmg_url -O $securid_utils_dmg",
-    require => File[$temp_dir],
+    require => File[$securid_temp_dir],
     unless => $securid_utils_dmg_test
   }
 
