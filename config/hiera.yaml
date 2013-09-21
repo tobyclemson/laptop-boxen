@@ -1,7 +1,7 @@
 :backends:
-  - yaml
-:yaml:
+  - gpg
+:gpg:
   :datadir: %{::boxen_repodir}/config/secrets
 :hierarchy:
-  - identity
+  - %{calling_module}
   - common

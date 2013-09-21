@@ -89,6 +89,7 @@ node default {
       'findutils',
       'gnu-tar',
       'gpg'
+      'gpgme'
     ]:
   }
 
