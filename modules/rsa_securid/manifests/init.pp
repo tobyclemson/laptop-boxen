@@ -41,7 +41,7 @@ class rsa_securid(
   exec { 'copy-token-importer':
     command => "cp $securid_utils_volume_token_importer $securid_token_importer",
     creates => $securid_token_importer,
-    require => Exec['copy-token-importer'],
+    require => Exec['open-securid-utils'],
     unless => $securid_token_importer_test
   }
 
