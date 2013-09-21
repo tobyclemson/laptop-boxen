@@ -16,7 +16,7 @@ class rsa_securid(
   $securid_token_importer_test = "test -f $securid_token_importer"
   $securid_identity = "$securid_temp_dir/tclemson-identity.sdtid"
 
-  package { 'RSA SecurID':
+  package { 'rsa-securid':
     provider => 'pkgdmg',
     source => $securid_token_dmg_url,
     ensure => 'installed'
@@ -63,7 +63,8 @@ class rsa_securid(
     command => "$securid_token_importer -f $securid_identity -p $password",
     require => [
       File['create-identity-file'],
-      Exec['copy-token-importer']
+      Exec['copy-token-importer'],
+      Package['rsa-securid']
     ]
   }
 }
