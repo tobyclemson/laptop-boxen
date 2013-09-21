@@ -34,14 +34,14 @@ class rsa_securid(
   exec { 'open-securid-utils':
     command => "open $securid_utils_dmg",
     creates => $securid_utils_volume,
-    require => File[$securid_utils_dmg],
+    require => Exec['fetch-securid-utils'],
     unless => $securid_token_importer_test
   }
 
   exec { 'copy-token-importer':
     command => "cp $securid_utils_volume_token_importer $securid_token_importer",
     creates => $securid_token_importer,
-    require => Exec["open $securid_utils_dmg"],
+    require => Exec['copy-token-importer'],
     unless => $securid_token_importer_test
   }
 
