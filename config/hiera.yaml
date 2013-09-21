@@ -3,5 +3,5 @@
 :gpg:
   :datadir: %{::boxen_repodir}/config/secrets
 :hierarchy:
-  - %{calling_module}
+  - %{module_name}
   - common

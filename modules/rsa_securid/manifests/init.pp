@@ -1,4 +1,4 @@
-class rsa_securid($identity = '') {
+class rsa_securid($identity) {
   $home_dir = "/Users/${::luser}"
 
   package { 'RSA SecurID':
@@ -9,11 +9,6 @@ class rsa_securid($identity = '') {
 
   file { "$home_dir/tclemson-identity.sdtid":
     content => $identity,
-    ensure => 'present'
-  }
-
-  file { "$home_dir/boxen_home":
-    content => $::boxen_home,
     ensure => 'present'
   }
 }
