@@ -1,5 +1,5 @@
 class terminal_customisations {
-  $home_dir = "/Users/${::luser}"
+  $home_dir = "/Users/${::boxen_user}"
 
   plistmerge { 'Add IR_Black profile':
     source_plist => "puppet:///modules/terminal_customisations/ir_black.profile.plist",
@@ -23,5 +23,5 @@ class terminal_customisations {
     user => $::boxen_user,
     ensure => 'present',
     require => Plistmerge['Add IR_Black profile']
-  }  
+  }
 }

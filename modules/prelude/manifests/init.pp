@@ -1,5 +1,5 @@
 class prelude {
-  $home_dir = "/Users/${::luser}"
+  $home_dir = "/Users/${::boxen_user}"
 
   # emacs flyspell uses aspell
   package { 'aspell': }

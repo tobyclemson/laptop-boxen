@@ -1,7 +1,7 @@
 class emacs_customisations {
   require prelude
 
-  $home_dir = "/Users/${::luser}"
+  $home_dir = "/Users/${::boxen_user}"
   $emacsd_dir = "$home_dir/.emacs.d"
 
   file { "$emacsd_dir/personal":

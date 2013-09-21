@@ -1,10 +1,10 @@
 class zsh_customisations {
   require ohmyzsh
 
-  $home_dir = "/Users/${::luser}"
+  $home_dir = "/Users/${::boxen_user}"
   $zsh_custom_dir = "$home_dir/.zsh-custom"
   $zsh_ohmyzsh_dir = "$home_dir/.oh-my-zsh"
-  
+
   file { $zsh_custom_dir:
     ensure => 'directory',
   }
