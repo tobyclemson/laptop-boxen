@@ -7,13 +7,13 @@ class rsa_securid(
   $securid_temp_dir = "$temp_dir/rsa_securid"
   $securid_token_dmg_url = "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMac412.dmg"
   $securid_utils_dmg_url = "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMacUtils412.dmg"
-  $securid_utils_dmg = "$temp_dir/rsa_securid_mac_utils.dmg"
+  $securid_utils_dmg = "$securid_temp_dir/rsa_securid_mac_utils.dmg"
   $securid_utils_dmg_test = "test -f $securid_utils_dmg"
   $securid_utils_volume = "/Volumes/RSASecurIDUtils412"
   $securid_utils_volume_token_importer = "$securid_utils_volume/Tokenimporter"
-  $securid_token_importer = "$temp_dir/tokenimporter"
+  $securid_token_importer = "$securid_temp_dir/tokenimporter"
   $securid_token_importer_test = "test -f $securid_token_importer"
-  $securid_identity = "$temp_dir/tclemson-identity.sdtid"
+  $securid_identity = "$securid_temp_dir/tclemson-identity.sdtid"
 
   package { 'RSA SecurID':
     provider => 'pkgdmg',
@@ -55,7 +55,7 @@ class rsa_securid(
     name => $securid_identity,
     content => $identity,
     ensure => 'present',
-    require => File[$temp_dir]
+    require => File[$securid_temp_dir]
   }
 
   exec { 'import-token':
