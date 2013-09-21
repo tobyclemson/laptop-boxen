@@ -11,6 +11,7 @@ class rsa_securid(
   $securid_utils_dmg_test = "test -f $securid_utils_dmg"
   $securid_utils_volume = "/Volumes/RSASecurIDUtils412"
   $securid_utils_volume_token_importer = "$securid_utils_volume/Tokenimporter"
+  $securid_utils_volume_test = "test -e $securid_utils_volume"
   $securid_token_importer = "$securid_temp_dir/tokenimporter"
   $securid_token_importer_test = "test -f $securid_token_importer"
   $securid_identity = "$securid_temp_dir/tclemson-identity.sdtid"
@@ -47,8 +48,8 @@ class rsa_securid(
 
   exec { 'unmount-securid-utils':
     command => "umount $securid_utils_volume",
-    require => Exec['open-securid-utils', 'copy-token-importer'],
-    unless => $securid_token_importer_test
+    require => Exec['copy-token-importer'],
+    onlyif => $securid_utils_volume_test
   }
 
   file { 'create-identity-file':
