@@ -20,8 +20,8 @@ class rsa_securid(
   $securid_utils_volume_test = "test -e $securid_utils_volume"
 
   $securid_identity = "$securid_temp_dir/tclemson-identity.sdtid"
-  $securid_identity_installed_flag = "$securid_temp_dir/token-installed"
-  $securid_identity_installed_test = "test -f $securid_identity_installed_flag"
+  $securid_identity_installed_receipt = "$securid_temp_dir/token-installed"
+  $securid_identity_installed_test = "test -f $securid_identity_installed_receipt"
 
   package { 'rsa-securid':
     provider => 'pkgdmg',
@@ -59,10 +59,8 @@ class rsa_securid(
     onlyif => $securid_utils_volume_test
   }
 
-  file { 'create-identity-file':
-    name => $securid_identity,
-    content => $identity,
-    ensure => 'present',
+  exec { 'create-identity-file':
+    command => "echo '$identity' > $securid_identity",
     unless => $securid_identity_installed_test,
     require => File[$securid_temp_dir]
   }
@@ -76,8 +74,8 @@ class rsa_securid(
     ]
   }
 
-  file { 'token-imported-flag':
-    name => $securid_identity_installed_flag,
+  file { 'token-imported-receipt':
+    name => $securid_identity_installed_receipt,
     ensure => 'present',
     content => '',
     require => Exec['import-token']
