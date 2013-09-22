@@ -67,6 +67,7 @@ class rsa_securid(
 
   exec { 'import-token':
     command => "$securid_token_importer -f $securid_identity -p $password",
+    unless => $securid_identity_installed_test,
     require => [
       Exec['create-identity-file', 'copy-token-importer'],
       Package['rsa-securid']
