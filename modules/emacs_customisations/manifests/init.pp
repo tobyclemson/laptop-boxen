@@ -1,4 +1,4 @@
-class emacs_customisations {
+class emacs_customisations($credentials) {
   require prelude
 
   $home_dir = "/Users/${::boxen_user}"
@@ -16,5 +16,11 @@ class emacs_customisations {
     recurse => 'true',
     source => "puppet:///modules/emacs_customisations/prelude-modules.el",
     require => Class['prelude']
+  }
+
+  file { "$home_dir/.netrc":
+    content => $credentials,
+    mode => 600,
+    ensure => 'present',
   }
 }
