@@ -143,6 +143,7 @@ node default {
   include alfred
   include caffeine
   include sizeup
+  include sizeup_customisations
   include onepassword
   include rsa_securid
   include silverlight
