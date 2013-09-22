@@ -37,6 +37,10 @@ github "xquartz",    "1.1.0"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
+mod "archive",
+  :ref => "3d37b476685c94a45d771466b473a220b8b9d3b4",
+  :git => "https://github.com/camptocamp/puppet-archive.git"
+
 github "java",           "1.1.2"
 github "intellij",       "1.3.0"
 github "chrome",         "1.1.1"
