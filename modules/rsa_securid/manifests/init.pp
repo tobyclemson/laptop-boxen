@@ -33,7 +33,7 @@ class rsa_securid(
   }
 
   exec { 'open-securid-utils':
-    command => "open $securid_utils_dmg",
+    command => "hdiutil attach $securid_utils_dmg -nobrowse",
     creates => $securid_utils_volume,
     require => Exec['fetch-securid-utils'],
     unless => $securid_token_importer_test
