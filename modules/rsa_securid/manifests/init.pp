@@ -4,17 +4,24 @@ class rsa_securid(
 ) {
   $home_dir = "/Users/${::boxen_user}"
   $temp_dir = "$boxen_home/tmp"
+
   $securid_temp_dir = "$temp_dir/rsa_securid"
+
   $securid_token_dmg_url = "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMac412.dmg"
+  $securid_token_importer = "$securid_temp_dir/tokenimporter"
+  $securid_token_importer_test = "test -f $securid_token_importer"
+
   $securid_utils_dmg_url = "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMacUtils412.dmg"
   $securid_utils_dmg = "$securid_temp_dir/rsa_securid_mac_utils.dmg"
   $securid_utils_dmg_test = "test -f $securid_utils_dmg"
+
   $securid_utils_volume = "/Volumes/RSASecurIDUtils412"
   $securid_utils_volume_token_importer = "$securid_utils_volume/Tokenimporter"
   $securid_utils_volume_test = "test -e $securid_utils_volume"
-  $securid_token_importer = "$securid_temp_dir/tokenimporter"
-  $securid_token_importer_test = "test -f $securid_token_importer"
+
   $securid_identity = "$securid_temp_dir/tclemson-identity.sdtid"
+  $securid_identity_installed_flag = "$securid_temp_dir/token-installed"
+  $securid_identity_installed_test = "test -f $securid_identity_installed_flag"
 
   package { 'rsa-securid':
     provider => 'pkgdmg',
@@ -56,6 +63,7 @@ class rsa_securid(
     name => $securid_identity,
     content => $identity,
     ensure => 'present',
+    unless => $securid_identity_installed_test,
     require => File[$securid_temp_dir]
   }
 
@@ -66,5 +74,12 @@ class rsa_securid(
       Exec['copy-token-importer'],
       Package['rsa-securid']
     ]
+  }
+
+  file { 'token-imported-flag':
+    name => $securid_identity_installed_flag,
+    ensure => 'present',
+    content => '',
+    require => Exec['import-token']
   }
 }
