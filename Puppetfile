@@ -10,6 +10,11 @@ def github(name, version, options = nil)
   mod name, version, :github_tarball => options[:repo]
 end
 
+# Used to manage archive files. Required.
+mod "archive",
+  :ref => "3d37b476685c94a45d771466b473a220b8b9d3b4",
+  :git => "https://github.com/camptocamp/puppet-archive.git"
+
 # Includes many of our custom types and providers, as well as global
 # config. Required.
 
@@ -36,10 +41,6 @@ github "xquartz",    "1.1.0"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
-
-mod "archive",
-  :ref => "3d37b476685c94a45d771466b473a220b8b9d3b4",
-  :git => "https://github.com/camptocamp/puppet-archive.git"
 
 github "java",           "1.1.2"
 github "intellij",       "1.3.0"
