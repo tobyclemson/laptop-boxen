@@ -30,7 +30,7 @@ class afloat(
   }
 
   file { "$simbl_plugins_dir/Afloat.bundle":
-    source => 'file://$afloat_installer_dir/Contents/Afloat.bundle',
+    source => "file://$afloat_installer_dir/Contents/Afloat.bundle",
     recurse => true,
     ensure => 'present',
     require => [
