@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/camptocamp/puppet-archive.git
+  ref: 3d37b476685c94a45d771466b473a220b8b9d3b4
+  sha: 3d37b476685c94a45d771466b473a220b8b9d3b4
+  specs:
+    archive (0.0.1)
+
 GITHUBTARBALL
   remote: boxen/puppet-alfred
   specs:
@@ -285,6 +292,7 @@ GITHUBTARBALL
 
 DEPENDENCIES
   alfred (= 1.1.2)
+  archive (>= 0)
   autoconf (= 1.0.0)
   autojump (= 1.0.0)
   boxen (= 3.0.2)
