@@ -146,6 +146,7 @@ node default {
   include sizeup
   include sizeup_customisations
   include onepassword
+  include onepassword_customisations
   include rsa_securid
   include silverlight
 
