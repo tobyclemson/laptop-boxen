@@ -1,12 +1,12 @@
 class onepassword_customisations(
-  $name,
-  $key
+  $person,
+  $serial
 ) {
   require onepassword
 
   boxen::osx_defaults { 'Install 1Password license name':
     key => "License:Person",
-    value => $name,
+    value => $person,
     domain => 'ws.agile.1Password',
     user => $::boxen_user,
     ensure => 'present',
@@ -15,7 +15,7 @@ class onepassword_customisations(
 
   boxen::osx_defaults { 'Install 1Password license name':
     key => "License:Serial",
-    value => $key,
+    value => $serial,
     domain => 'ws.agile.1Password',
     user => $::boxen_user,
     ensure => 'present',
