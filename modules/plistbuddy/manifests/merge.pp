@@ -12,8 +12,7 @@ define plistbuddy::merge(
      ($target_plist == undef) or
      ($merge_path == undef) or
      ($affected_key == undef) {
-    fail('Cannot merge plists without source_plist, target_plist, merge_path' +
-       'and affected_key attributes')
+    fail('Cannot merge plists without source_plist, target_plist, merge_path and affected_key attributes')
   }
 
   file { $plist_tmp_file:
@@ -22,14 +21,11 @@ define plistbuddy::merge(
   }
 
   $merge_command = "$plistbuddy_cmd -c \"Merge $plist_tmp_file $merge_path\" $target_plist"
-  $current_content_hash_command = "$plistbuddy_cmd -x -c \"Print $merge_path$affected_key\" " +
-    "$target_plist"
-  $new_content_hash_command = "$plistbuddy_cmd -x -c \"Print $affected_key\" " +
-    "$plist_tmp_file"
+  $current_content_hash_command = "$plistbuddy_cmd -x -c \"Print $merge_path$affected_key\" $target_plist"
+  $new_content_hash_command = "$plistbuddy_cmd -x -c \"Print $affected_key\" $plist_tmp_file"
 
   exec { $merge_command:
     require => File[$plist_tmp_file],
-    unless => "echo \"[ \"\$($current_content_hash_command)\" == " +
-      "\"\$($new_content_hash_command)\" ]\" | bash"
+    unless => "echo \"[ \"\$($current_content_hash_command)\" == \"\$($new_content_hash_command)\" ]\" | bash"
   }
 }
