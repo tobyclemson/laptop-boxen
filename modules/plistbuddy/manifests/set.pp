@@ -15,8 +15,7 @@ define plistbuddy::set(
   $current_hash_cmd = "$plistbuddy_cmd -x -c \"Print $set_path\" $target_plist | md5"
   $new_hash_cmd = "echo \"$value\" | md5"
 
-  exec { $merge_cmd:
-    require => File[$plist_tmp_file],
+  exec { $set_cmd:
     unless => "echo \"[ \\\"\$($current_hash_cmd)\\\" == \\\"\$($new_hash_cmd)\\\" ]\" | bash"
   }
 }
