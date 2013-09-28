@@ -14,7 +14,7 @@ class terminal_customisations {
     domain => 'com.apple.Terminal',
     user => $::boxen_user,
     ensure => 'present',
-    require => Plistmerge['Add IR_Black profile']
+    require => Plistbuddy::Merge['Add IR_Black profile']
   }
 
   boxen::osx_defaults { 'Use IR_Black by default':
@@ -23,6 +23,6 @@ class terminal_customisations {
     domain => 'com.apple.Terminal',
     user => $::boxen_user,
     ensure => 'present',
-    require => Plistmerge['Add IR_Black profile']
+    require => Plistbuddy::Merge['Add IR_Black profile']
   }
 }

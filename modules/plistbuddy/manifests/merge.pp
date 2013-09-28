@@ -20,12 +20,12 @@ define plistbuddy::merge(
     source => $source_plist
   }
 
-  $merge_command = "$plistbuddy_cmd -c \"Merge $plist_tmp_file $merge_path\" $target_plist"
-  $current_content_hash_command = "$plistbuddy_cmd -x -c \"Print $merge_path$affected_key\" $target_plist"
-  $new_content_hash_command = "$plistbuddy_cmd -x -c \"Print $affected_key\" $plist_tmp_file"
+  $merge_cmd = "$plistbuddy_cmd -c \"Merge $plist_tmp_file $merge_path\" $target_plist"
+  $current_hash_cmd = "$plistbuddy_cmd -x -c \"Print $merge_path$affected_key\" $target_plist"
+  $new_hash_cmd = "$plistbuddy_cmd -x -c \"Print $affected_key\" $plist_tmp_file"
 
-  exec { $merge_command:
+  exec { $merge_cmd:
     require => File[$plist_tmp_file],
-    unless => "echo \"[ \"\$($current_content_hash_command)\" == \"\$($new_content_hash_command)\" ]\" | bash"
+    unless => "echo \"[ \"\$($current_hash_cmd)\" == \"\$($new_hash_cmd)\" ]\" | bash"
   }
 }
