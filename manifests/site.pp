@@ -142,7 +142,7 @@ node default {
   # system utilities
   include alfred
   include caffeine
-  include afloat
+  # include afloat
   include sizeup
   include sizeup_customisations
   include onepassword
