@@ -4,15 +4,15 @@ class onepassword_customisations(
 ) {
   require onepassword
 
-  plistbuddy::set { 'Install 1Password license person':
+  plistbuddy::add { 'Install 1Password license person':
     target_plist => "${home_dir}/Library/Preferences/ws.agile.1Password.plist",
-    set_path => ":License:Person",
+    add_path => ":License:Person",
     value => $person,
   }
 
-  plistbuddy::set { 'Install 1Password license serial':
+  plistbuddy::add { 'Install 1Password license serial':
     target_plist => "${home_dir}/Library/Preferences/ws.agile.1Password.plist",
-    set_path => ":License:Serial",
+    add_path => ":License:Serial",
     value => $serial,
   }
 
