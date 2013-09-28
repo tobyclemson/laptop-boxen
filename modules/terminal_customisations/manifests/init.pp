@@ -1,10 +1,11 @@
 class terminal_customisations {
   $home_dir = "/Users/${::boxen_user}"
 
-  plistmerge { 'Add IR_Black profile':
+  plistbuddy::merge { 'Add IR_Black profile':
     source_plist => "puppet:///modules/terminal_customisations/ir_black.profile.plist",
     target_plist => "${home_dir}/Library/Preferences/com.apple.Terminal.plist",
     merge_path => ":'Window Settings'",
+    affected_key => ":'IR_Black'",
   }
 
   boxen::osx_defaults { 'Use IR_Black in startup window':
