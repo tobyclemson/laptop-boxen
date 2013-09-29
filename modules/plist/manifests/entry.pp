@@ -28,12 +28,14 @@ define plist::entry(
 
   exec { $add_cmd:
     unless => $exists_cmd,
-    require => File[$target]
+    require => File['initialise target']
   }
 
   exec { $set_cmd:
     unless => "echo \"[ \\\"\$($current_hash_cmd)\\\" == \\\"\$($new_hash_cmd)\\\" ]\" | bash",
-    require => Exec[$add_cmd],
-    require => File[$target]
+    require => [
+      Exec[$add_cmd],
+      File['initialise target']
+    ]
   }
 }
