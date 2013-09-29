@@ -13,11 +13,11 @@ define plist::entry(
     fail('Cannot set entry in plist without target, path, type and value attributes')
   }
 
-  $add_cmd = "$plistbuddy_cmd -c \"Add $path $type\" $target"
-  $set_cmd = "$plistbuddy_cmd -c \"Set $path $value\" $target"
-  $exists_cmd = "$plistbuddy_cmd -c \"Print $path\" $target 2>&1 | grep -vq \"Does Not Exist\""
+  $add_cmd = "$plistbuddy_cmd -c \"Add $path $type\" \"$target\""
+  $set_cmd = "$plistbuddy_cmd -c \"Set $path $value\" \"$target\""
+  $exists_cmd = "$plistbuddy_cmd -c \"Print $path\" \"$target\" 2>&1 | grep -vq \"Does Not Exist\""
 
-  $current_hash_cmd = "$plistbuddy_cmd -c \"Print $path\" $target | md5"
+  $current_hash_cmd = "$plistbuddy_cmd -c \"Print $path\" \"$target\" | md5"
   $new_hash_cmd = "echo \"$value\" | md5"
 
   exec { $add_cmd:
