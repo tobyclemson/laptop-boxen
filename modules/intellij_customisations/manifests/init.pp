@@ -8,7 +8,7 @@ class intellij_customisations(
 
   file { "$home_dir/Library/Preferences/IntelliJIdea12/idea12.key":
     ensure => 'present',
-    content => template('intellig_customisations/idea12.key.erb')
+    content => template('intellij_customisations/idea12.key.erb')
   }
 
   file { "$home_dir/Library/Preferences/IntelliJIdea12/disabled_plugins.txt":
