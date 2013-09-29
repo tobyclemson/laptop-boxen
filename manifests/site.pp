@@ -143,6 +143,7 @@ node default {
 
   # system utilities
   include alfred
+  include alfred_customisations
   include caffeine
   # include afloat
   include sizeup
