@@ -88,7 +88,7 @@ node default {
       'ack',
       'findutils',
       'gnu-tar',
-      'gpg',
+      'gnupg',
       'gpgme'
     ]:
   }
