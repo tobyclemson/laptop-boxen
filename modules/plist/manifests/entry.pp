@@ -4,6 +4,10 @@ define plist::entry(
   $type = undef,
   $value = undef
 ) {
+  include plist::blank
+
+  Plist::Blank[$target] -> Plist::Entry[$target, $path, $type, $value]
+
   $plistbuddy_cmd = '/usr/libexec/PlistBuddy'
 
   if ($target == undef) or
@@ -20,23 +24,12 @@ define plist::entry(
   $current_hash_cmd = "$plistbuddy_cmd -c \"Print $path\" \"$target\" | md5"
   $new_hash_cmd = "echo \"$value\" | md5"
 
-  if !defined(File[$target]) {
-    file { $target:
-      source => "puppet:///modules/plist/blank.plist",
-      ensure => 'file'
-    }
-  }
-
   exec { $add_cmd:
     unless => $exists_cmd,
-    require => File[$target]
   }
 
   exec { $set_cmd:
     unless => "echo \"[ \\\"\$($current_hash_cmd)\\\" == \\\"\$($new_hash_cmd)\\\" ]\" | bash",
-    require => [
-      Exec[$add_cmd],
-      File[$target]
-    ]
+    require => Exec[$add_cmd]
   }
 }
