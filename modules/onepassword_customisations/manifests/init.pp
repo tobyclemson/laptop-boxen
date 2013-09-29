@@ -6,16 +6,16 @@ class onepassword_customisations(
 
   $home_dir = "/Users/${::boxen_user}"
 
-  plistbuddy::add { 'Install 1Password license person':
-    target_plist => "${home_dir}/Library/Preferences/ws.agile.1Password.plist",
-    add_path => ":'License':'Person'",
+  plist::entry { 'Install 1Password license person':
+    target => "${home_dir}/Library/Preferences/ws.agile.1Password.plist",
+    path => ":'License':'Person'",
     type => 'string',
     value => $person,
   }
 
-  plistbuddy::add { 'Install 1Password license serial':
-    target_plist => "${home_dir}/Library/Preferences/ws.agile.1Password.plist",
-    add_path => ":'License':'Serial'",
+  plist::entry { 'Install 1Password license serial':
+    target => "${home_dir}/Library/Preferences/ws.agile.1Password.plist",
+    path => ":'License':'Serial'",
     type => 'string',
     value => $serial,
   }
