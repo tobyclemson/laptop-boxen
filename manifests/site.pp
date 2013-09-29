@@ -125,6 +125,7 @@ node default {
     edition => 'ultimate',
     version => '12.1.4'
   }
+  include intellij_customisations
 
   # databases
   include postgresql
