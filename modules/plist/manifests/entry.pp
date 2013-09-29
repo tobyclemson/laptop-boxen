@@ -4,9 +4,7 @@ define plist::entry(
   $type = undef,
   $value = undef
 ) {
-  include plist::blank
-
-  Plist::Blank[$target] -> Plist::Entry[$target, $path, $type, $value]
+  Plist::File[$target] -> Plist::Entry[$target, $path, $type, $value]
 
   $plistbuddy_cmd = '/usr/libexec/PlistBuddy'
 

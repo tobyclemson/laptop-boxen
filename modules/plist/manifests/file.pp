@@ -1,5 +1,5 @@
-class plist::blank(
-  $target
+define plist::file(
+  $target = $title
 ) {
   file { $target:
     replace => 'no',
