@@ -20,9 +20,11 @@ define plist::entry(
   $current_hash_cmd = "$plistbuddy_cmd -c \"Print $path\" \"$target\" | md5"
   $new_hash_cmd = "echo \"$value\" | md5"
 
-  file { $target:
-    source => "puppet:///modules/plist/blank.plist",
-    ensure => 'file'
+  if !defined(File[$target]) {
+    file { $target:
+      source => "puppet:///modules/plist/blank.plist",
+      ensure => 'file'
+    }
   }
 
   exec { $add_cmd:
