@@ -20,12 +20,19 @@ define plist::entry(
   $current_hash_cmd = "$plistbuddy_cmd -c \"Print $path\" \"$target\" | md5"
   $new_hash_cmd = "echo \"$value\" | md5"
 
+  file { $target:
+    source => "puppet:///modules/plist/blank.plist",
+    unless => "test -f $target"
+  }
+
   exec { $add_cmd:
-    unless => $exists_cmd
+    unless => $exists_cmd,
+    require => File[$target]
   }
 
   exec { $set_cmd:
     unless => "echo \"[ \\\"\$($current_hash_cmd)\\\" == \\\"\$($new_hash_cmd)\\\" ]\" | bash",
-    require => Exec[$add_cmd]
+    require => Exec[$add_cmd],
+    require => File[$target]
   }
 }
