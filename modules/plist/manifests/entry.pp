@@ -20,9 +20,10 @@ define plist::entry(
   $current_hash_cmd = "$plistbuddy_cmd -c \"Print $path\" \"$target\" | md5"
   $new_hash_cmd = "echo \"$value\" | md5"
 
-  file { $target:
+  file { 'initialise target':
+    path => $target,
     source => "puppet:///modules/plist/blank.plist",
-    unless => "test -f $target"
+    ensure => 'file'
   }
 
   exec { $add_cmd:
