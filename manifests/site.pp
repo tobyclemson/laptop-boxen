@@ -90,7 +90,8 @@ node default {
       'gnu-tar',
       'gnupg',
       'gpgme',
-      'tree'
+      'tree',
+      'coffee'
     ]:
   }
 
