@@ -90,8 +90,7 @@ node default {
       'gnu-tar',
       'gnupg',
       'gpgme',
-      'tree',
-      'coffee'
+      'tree'
     ]:
   }
 
@@ -114,6 +113,10 @@ node default {
   include ruby::1_9_2
   include ruby::1_9_3
   include ruby::2_0_0
+
+  include nodejs::module { 'coffee-script':
+    node_version => 'v0.10'
+  }
 
   # browsers
   include chrome
