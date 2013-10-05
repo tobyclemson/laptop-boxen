@@ -90,7 +90,8 @@ node default {
       'gnu-tar',
       'gnupg',
       'gpgme',
-      'tree'
+      'tree',
+      'sbt'
     ]:
   }
 
@@ -131,6 +132,7 @@ node default {
     version => '12.1.4'
   }
   include intellij_customisations
+  include eclipse::java
 
   # databases
   include postgresql

@@ -44,6 +44,7 @@ github "xquartz",    "1.1.0"
 
 github "java",           "1.1.2"
 github "intellij",       "1.3.0"
+github "eclipse",        "2.2.0"
 github "chrome",         "1.1.1"
 github "firefox",        "1.1.3"
 github "alfred",         "1.1.2"
