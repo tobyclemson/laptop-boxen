@@ -1,5 +1,14 @@
+(prelude-ensure-module-deps '(erc-hl-nicks erc-image erc-tweet))
+(require 'erc-hl-nicks)
+(require 'erc-tweet)
+(require 'erc-image)
 (require 'erc-join)
 (require 'tdc-todochiku)
+
+(add-to-list 'erc-modules 'tweet)
+(add-to-list 'erc-modules 'image)
+
+(erc-update-modules)
 
 (erc-autojoin-enable)
 
