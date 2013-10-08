@@ -44,9 +44,9 @@
 
 (setq erc-keywords '(("SUCCESS" erc-keyword-good-face)
                      ("FIXED" erc-keyword-good-face)
-                     ("** OK **" erc-keyword-good-face)
+                     ("\*\* OK \*\*" erc-keyword-good-face)
                      ("STILL FAILING" erc-keyword-still-bad-face)
-                     ("** WARNING **" erc-keyword-warning-face)
+                     ("\*\* WARNING \*\*" erc-keyword-warning-face)
                      ("STARTED" erc-keyword-informative-face)
                      ("FINISHED" erc-keyword-informative-face)
                      ("ABORTED" erc-keyword-bad-face)
@@ -90,6 +90,8 @@
 (add-hook 'erc-text-matched-hook 'notify-nick-mentioned)
 (add-hook 'erc-server-PRIVMSG-functions 'notify-privmsg t)
 (add-hook 'erc-server-PRIVMSG-functions 'erc-server-PRIVMSG t)
+(add-hook 'erc-mode-hook '(lambda ()
+                            (set (make-variable-buffer-local 'case-fold-search) nil)))
 
 (erc-update-modules)
 
