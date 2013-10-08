@@ -5,11 +5,6 @@
 (require 'erc-join)
 (require 'tdc-todochiku)
 
-(add-to-list 'erc-modules 'tweet)
-(add-to-list 'erc-modules 'image)
-
-(erc-update-modules)
-
 (erc-autojoin-enable)
 
 (setq erc-autojoin-channels-alist
@@ -24,6 +19,8 @@
 (add-to-list 'erc-modules 'spelling)
 (add-to-list 'erc-modules 'keep-place)
 (add-to-list 'erc-modules 'log)
+(add-to-list 'erc-modules 'tweet)
+(add-to-list 'erc-modules 'image)
 
 (defun connect-to (irc-server-url)
   (erc :server irc-server-url
@@ -63,5 +60,7 @@
 (add-hook 'erc-text-matched-hook 'notify-nick-mentioned)
 (add-hook 'erc-server-PRIVMSG-functions 'notify-privmsg t)
 (add-hook 'erc-server-PRIVMSG-functions 'erc-server-PRIVMSG t)
+
+(erc-update-modules)
 
 (provide 'tdc-erc)
