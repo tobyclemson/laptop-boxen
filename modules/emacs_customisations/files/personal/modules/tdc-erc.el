@@ -42,11 +42,15 @@
   "ERC face to highlight keywords indicating something you might want to know about happened"
   :group 'erc-faces)
 
-(setq erc-keywords '(("SUCCESS" "FIXED" "** OK **" erc-keyword-good-face)
+(setq erc-keywords '(("SUCCESS" erc-keyword-good-face)
+                     ("FIXED" erc-keyword-good-face)
+                     ("** OK **" erc-keyword-good-face)
                      ("STILL FAILING" erc-keyword-still-bad-face)
                      ("** WARNING **" erc-keyword-warning-face)
-                     ("STARTED" "FINISHED" erc-keyword-informative-face)
-                     ("FAILURE ABORTED" erc-keyword-bad-face)))
+                     ("STARTED" erc-keyword-informative-face)
+                     ("FINISHED" erc-keyword-informative-face)
+                     ("ABORTED" erc-keyword-bad-face)
+                     ("FAILURE" erc-keyword-bad-face)))
 
 (defun connect-to (irc-server-url)
   (erc :server irc-server-url
