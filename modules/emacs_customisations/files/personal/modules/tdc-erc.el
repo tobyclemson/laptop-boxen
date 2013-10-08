@@ -49,6 +49,7 @@
                      ("\\*\\* WARNING \\*\\*" erc-keyword-warning-face)
                      ("STARTED" erc-keyword-informative-face)
                      ("FINISHED" erc-keyword-informative-face)
+                     ("\\*\\* CRITICAL \\*\\*" erc-keyword-bad-face)
                      ("ABORTED" erc-keyword-bad-face)
                      ("FAILURE" erc-keyword-bad-face)))
 
