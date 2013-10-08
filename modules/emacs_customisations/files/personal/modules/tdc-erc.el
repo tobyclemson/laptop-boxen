@@ -22,6 +22,32 @@
 (add-to-list 'erc-modules 'tweet)
 (add-to-list 'erc-modules 'image)
 
+(defface erc-keyword-bad-face '((t (:foreground "IndianRed")))
+  "ERC face to highlight keywords indicating something bad happened"
+  :group 'erc-faces)
+
+(defface erc-keyword-good-face '((t (:foreground "Green")))
+  "ERC face to highlight keywords indicating something good happened"
+  :group 'erc-faces)
+
+(defface erc-keyword-warning-face '((t (:foreground "Orange")))
+  "ERC face to highlight keywords indicating something that you should be warned about happened"
+  :group 'erc-faces)
+
+(defface erc-keyword-still-bad-face '((t (:foreground "Red")))
+  "ERC face to highlight keywords indicating something bad is still happening"
+  :group 'erc-faces)
+
+(defface erc-keyword-informative-face '((t (:foreground "Yellow")))
+  "ERC face to highlight keywords indicating something you might want to know about happened"
+  :group 'erc-faces)
+
+(setq erc-keywords '(("SUCCESS" "FIXED" "** OK **" erc-keyword-good-face)
+                     ("STILL FAILING" erc-keyword-still-bad-face)
+                     ("** WARNING **" erc-keyword-warning-face)
+                     ("STARTED" "FINISHED" erc-keyword-informative-face)
+                     ("FAILURE ABORTED" erc-keyword-bad-face)))
+
 (defun connect-to (irc-server-url)
   (erc :server irc-server-url
        :nick "tobyclemson"))
