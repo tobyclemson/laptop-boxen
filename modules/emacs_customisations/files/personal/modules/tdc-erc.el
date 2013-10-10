@@ -51,6 +51,7 @@
                      ("FINISHED" erc-keyword-informative-face)
                      ("\\*\\* CRITICAL \\*\\*" erc-keyword-bad-face)
                      ("ABORTED" erc-keyword-bad-face)
+                     ("FAILED" erc-keyword-bad-face)
                      ("FAILURE" erc-keyword-bad-face)))
 
 (defun connect-to (irc-server-url)
