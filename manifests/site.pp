@@ -180,6 +180,7 @@ node default {
   include skype
   include transmission
   include vlc
+  include cyberduck
   include libreoffice
   class { 'libreoffice::languagepack': locale => 'en-GB' }
 }
