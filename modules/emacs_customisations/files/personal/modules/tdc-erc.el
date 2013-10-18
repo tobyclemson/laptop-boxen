@@ -13,6 +13,7 @@
 
 (setq erc-nick "tobyclemson")
 (setq erc-auto-query "frame")
+(setq erc-image-inline-rescale window)
 
 (add-to-list 'auth-source-protocols '(irc "irc" "6667"))
 
@@ -21,6 +22,8 @@
 (add-to-list 'erc-modules 'log)
 (add-to-list 'erc-modules 'tweet)
 (add-to-list 'erc-modules 'image)
+
+(delete 'truncate 'erc-modules)
 
 (defface erc-keyword-bad-face '((t (:foreground "IndianRed")))
   "ERC face to highlight keywords indicating something bad happened"
@@ -92,8 +95,10 @@
 (add-hook 'erc-text-matched-hook 'notify-nick-mentioned)
 (add-hook 'erc-server-PRIVMSG-functions 'notify-privmsg t)
 (add-hook 'erc-server-PRIVMSG-functions 'erc-server-PRIVMSG t)
-(add-hook 'erc-mode-hook '(lambda ()
-                            (set (make-variable-buffer-local 'case-fold-search) nil)))
+(add-hook 'erc-mode-hook
+          '(lambda ()
+             (set (make-variable-buffer-local 'case-fold-search) nil)
+             (set (make-variable-buffer-local 'image-animate-loop) 't)))
 
 (erc-update-modules)
 
