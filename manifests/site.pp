@@ -117,6 +117,7 @@ node default {
 
   nodejs::module { 'coffee-script':
     node_version => 'v0.10'
+    ensure => '1.6.3'
   }
 
   # browsers
