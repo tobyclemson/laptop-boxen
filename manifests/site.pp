@@ -116,8 +116,8 @@ node default {
   include ruby::2_0_0
 
   nodejs::module { 'coffee-script':
-    node_version => 'v0.10'
-    ensure => '1.6.3'
+    node_version => 'v0.10',
+    ensure => '1.6.3',
   }
 
   # browsers
