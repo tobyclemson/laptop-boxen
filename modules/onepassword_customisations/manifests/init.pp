@@ -7,7 +7,9 @@ class onepassword_customisations(
   $home_dir = "/Users/${::boxen_user}"
   $onepassword_plist = "${home_dir}/Library/Preferences/ws.agile.1Password.plist"
 
-  plist::file { $onepassword_plist: }
+  plist::file { $onepassword_plist:
+    mode => '0600',
+  }
 
   plist::entry { 'Install 1Password license person':
     target => $onepassword_plist,
