@@ -1,7 +1,7 @@
 :backends:
-  - gpg
+  - "gpg"
 :gpg:
-  :datadir: %{::boxen_repodir}/config/secrets
+  :datadir: "%{::boxen_repodir}/config/secrets"
 :hierarchy:
-  - %{module_name}
-  - common
+  - "%{module_name}"
+  - "common"
