@@ -8,7 +8,7 @@ GIT
 GITHUBTARBALL
   remote: boxen/puppet-alfred
   specs:
-    alfred (1.1.5)
+    alfred (1.1.6)
 
 GITHUBTARBALL
   remote: boxen/puppet-autoconf
@@ -88,7 +88,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-firefox
   specs:
-    firefox (1.1.3)
+    firefox (1.1.4)
 
 GITHUBTARBALL
   remote: boxen/puppet-gcc
@@ -253,12 +253,12 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
-    vagrant (2.0.13)
+    vagrant (3.0.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-virtualbox
   specs:
-    virtualbox (1.0.6)
+    virtualbox (1.0.7)
 
 GITHUBTARBALL
   remote: boxen/puppet-vlc
@@ -301,7 +301,7 @@ GITHUBTARBALL
     stdlib (4.1.0)
 
 DEPENDENCIES
-  alfred (= 1.1.5)
+  alfred (= 1.1.6)
   archive (>= 0)
   autoconf (= 1.0.0)
   autojump (= 1.0.0)
@@ -318,7 +318,7 @@ DEPENDENCIES
   eclipse (= 2.2.0)
   emacs (= 1.1.0)
   evernote (= 2.0.4)
-  firefox (= 1.1.3)
+  firefox (= 1.1.4)
   gcc (= 2.0.1)
   git (= 1.3.2)
   googledrive (= 1.0.2)
@@ -355,8 +355,8 @@ DEPENDENCIES
   textmate (= 1.1.0)
   tmux (= 1.0.2)
   transmission (= 1.0.0)
-  vagrant (= 2.0.13)
-  virtualbox (= 1.0.6)
+  vagrant (= 3.0.0)
+  virtualbox (= 1.0.7)
   vlc (= 1.0.5)
   wget (= 1.0.0)
   xquartz (= 1.1.0)
