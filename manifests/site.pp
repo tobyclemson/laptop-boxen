@@ -159,6 +159,7 @@ node default {
   include onepassword_customisations
   include rsa_securid
   include silverlight
+  include keyremap4macbook
 
   # command line enhancements
   include terminal_customisations
