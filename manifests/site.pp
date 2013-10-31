@@ -160,6 +160,7 @@ node default {
   include rsa_securid
   include silverlight
   include keyremap4macbook
+  include gpgtools
 
   # command line enhancements
   include terminal_customisations
