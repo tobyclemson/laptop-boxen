@@ -286,6 +286,11 @@ GITHUBTARBALL
     zsh (1.0.0)
 
 GITHUBTARBALL
+  remote: envato/puppet-gpgtools
+  specs:
+    gpgtools (1.2.0)
+
+GITHUBTARBALL
   remote: haelmy/puppet-ohmyzsh
   specs:
     ohmyzsh (0.0.1)
@@ -327,6 +332,7 @@ DEPENDENCIES
   gcc (= 2.0.1)
   git (= 1.3.2)
   googledrive (= 1.0.2)
+  gpgtools (= 1.2.0)
   heroku (= 2.0.0)
   homebrew (= 1.4.1)
   hub (= 1.0.3)
