@@ -10,3 +10,4 @@
 (require 'tdc-erc)
 (require 'tdc-bindings)
 (require 'tdc-shell)
+(require 'tdc-snippets)
