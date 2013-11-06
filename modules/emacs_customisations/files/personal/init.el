@@ -11,3 +11,4 @@
 (require 'tdc-bindings)
 (require 'tdc-shell)
 (require 'tdc-snippets)
+(require 'tdc-js)
