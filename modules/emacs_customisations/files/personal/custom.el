@@ -8,6 +8,7 @@
  '(exec-path-from-shell-variables (quote ("PATH" "MANPATH" "SHELL" "TERM")))
  '(fci-rule-color "#383838")
  '(js-indent-level 2)
+ '(js3-consistent-level-indent-inner-bracket t)
  '(markdown-indent-on-enter nil)
  '(multi-term-program nil)
  '(nxml-child-indent 2)
