@@ -6,7 +6,6 @@
   "The directory containing personal snippets.")
 
 (add-to-list 'yas-snippet-dirs tdc-snippets-dir)
-(delete "~/.emacs.d/snippets" 'yas-snippet-dirs)
 
 (setq
  yas/prompt-functions

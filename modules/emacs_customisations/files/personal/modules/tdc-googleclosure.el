@@ -3,8 +3,7 @@
 (add-hook
  'js3-mode-hook
  #'(lambda ()
-     (add-to-list (make-variable-buffer-local 'yas--extra-modes)
-                  'googleclosure-mode)))
+     (yas-activate-extra-mode 'googleclosure-mode)))
 
 (defun get-current-provide-string ()
   "Returns the first goog.provide() string in the current buffer, or nil if not found."
