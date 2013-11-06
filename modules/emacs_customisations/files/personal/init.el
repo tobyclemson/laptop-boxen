@@ -12,3 +12,4 @@
 (require 'tdc-shell)
 (require 'tdc-snippets)
 (require 'tdc-js)
+(require 'tdc-googleclosure)
