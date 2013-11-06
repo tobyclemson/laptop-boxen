@@ -1,3 +1,4 @@
+(prelude-ensure-module-deps '(js3-mode))
 (require 'tdc-snippets)
 
 (add-hook
