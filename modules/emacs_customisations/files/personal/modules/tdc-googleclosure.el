@@ -1,4 +1,5 @@
 (require 'tdc-snippets)
+(require 'tdc-js)
 
 (add-hook
  'js3-mode-hook
