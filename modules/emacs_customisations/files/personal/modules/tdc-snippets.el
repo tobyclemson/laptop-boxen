@@ -15,4 +15,6 @@
    yas/x-prompt
    yas/no-prompt))
 
+(yas-reload-all)
+
 (provide 'tdc-snippets)
