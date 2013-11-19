@@ -181,6 +181,7 @@ node default {
   include googledrive
   include kindle
   include skype
+  include adium
   include transmission
   include vlc
   include cyberduck
