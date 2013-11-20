@@ -6,6 +6,11 @@ GIT
     archive (0.0.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-adium
+  specs:
+    adium (1.2.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-alfred
   specs:
     alfred (1.1.6)
@@ -311,6 +316,7 @@ GITHUBTARBALL
     stdlib (4.1.0)
 
 DEPENDENCIES
+  adium (= 1.2.0)
   alfred (= 1.1.6)
   archive (>= 0)
   autoconf (= 1.0.0)
