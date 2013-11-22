@@ -91,7 +91,8 @@ node default {
       'gnupg',
       'gpgme',
       'tree',
-      'sbt'
+      'sbt',
+      'ctags-exuberant'
     ]:
   }
 
