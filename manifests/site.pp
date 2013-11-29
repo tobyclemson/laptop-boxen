@@ -61,7 +61,7 @@ node default {
   class { 'osx::global::key_repeat_delay': delay => 10 }
 
   include osx::dock::autohide
-  include osx::dock::icon_size
+  class { 'osx::dock::icon_size': size => 36 }
 
   include osx::finder::show_all_on_desktop
   include osx::finder::empty_trash_securely
@@ -70,8 +70,6 @@ node default {
   include osx::disable_app_quarantine
   include osx::no_network_dsstores
   include osx::software_update
-
-  class { 'osx::dock::icon_size': size => 36 }
 
   # core modules, needed for most things
   include dnsmasq
