@@ -1,9 +1,8 @@
 ;; tdc-packages.el --- Personal packages.
-;;
 
 ;;; Commentary:
 
-;; Set up all packages along with their keybindings
+;; Set up all packages along with their key bindings
 
 ;;; Code:
 
@@ -24,5 +23,7 @@
 (global-set-key (kbd "C-c C-l") 'linum-relative-toggle)
 
 (setq linum-relative-current-symbol "")
+
+(setq ispell-dictionary "british")
 
 (provide 'tdc-packages)

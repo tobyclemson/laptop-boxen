@@ -1,5 +1,4 @@
 ;; tdc-bindings.el --- Key Bindings.
-;;
 
 ;;; Commentary:
 
@@ -13,5 +12,8 @@
 
 ;; unset minimise
 (global-unset-key "\C-z")
+
+;; replace hide with helm-projectile
+(global-set-key (kbd "s-h") 'helm-projectile)
 
 (provide 'tdc-bindings)
