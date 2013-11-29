@@ -1,3 +1,12 @@
+;; tdc-googleclosure.el --- Google Closure package.
+;;
+
+;;; Commentary:
+
+;; Set up snippets for Google Closure
+
+;;; Code:
+
 (require 'tdc-snippets)
 (require 'tdc-js)
 

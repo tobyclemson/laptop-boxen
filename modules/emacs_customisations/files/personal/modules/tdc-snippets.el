@@ -1,3 +1,13 @@
+;; tdc-snippets.el --- Snippets package.
+;;
+
+;;; Commentary:
+
+;; Install and configure yasnippet.
+
+;;; Code:
+
+
 (prelude-ensure-module-deps '(yasnippet))
 (require 'yasnippet)
 (yas-global-mode 1)

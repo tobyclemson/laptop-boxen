@@ -1,3 +1,12 @@
+;; tdc-erc.el --- ERC configuration.
+;;
+
+;;; Commentary:
+
+;; Add ERC modules, setup authentication and setup authentication
+
+;;; Code:
+
 (prelude-ensure-module-deps '(erc-hl-nicks erc-image erc-tweet))
 (require 'erc-hl-nicks)
 (require 'erc-tweet)
@@ -13,7 +22,7 @@
 
 (setq erc-nick "tobyclemson")
 (setq erc-auto-query "frame")
-(setq erc-image-inline-rescale window)
+(setq erc-image-inline-rescale 'window)
 
 (add-to-list 'auth-source-protocols '(irc "irc" "6667"))
 

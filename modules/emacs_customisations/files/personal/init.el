@@ -11,6 +11,6 @@
 (require 'tdc-bindings)
 (require 'tdc-shell)
 (require 'tdc-snippets)
+(require 'tdc-packages)
 (require 'tdc-js)
 (require 'tdc-googleclosure)
-(require 'tdc-packages)

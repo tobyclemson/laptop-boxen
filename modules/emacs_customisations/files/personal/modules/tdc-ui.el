@@ -1,3 +1,12 @@
+;; tdc-ui.el --- UI package.
+;;
+
+;;; Commentary:
+
+;; Add UI extensions.
+
+;;; Code:
+
 ;; Toggle window dedication
 (defun toggle-window-dedication ()
   "Toggle whether the current active window is dedicated or not."
