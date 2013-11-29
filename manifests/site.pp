@@ -176,6 +176,7 @@ node default {
   include tmux
 
   # applications
+  include steam
   include evernote
   include omnigraffle::pro
   include dropbox
