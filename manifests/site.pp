@@ -71,11 +71,25 @@ node default {
   include osx::no_network_dsstores
   include osx::software_update
 
+  class { 'osx::dock::icon_size': size => 36 }
+
   # core modules, needed for most things
   include dnsmasq
   include git
   include hub
   include nginx
+
+  git::config::global { 'user.email':
+    value  => 'tobyclemson@gmail.com'
+  }
+
+  git::config::global { 'user.name':
+    value  => 'Toby Clemson'
+  }
+
+  git::config::global { 'push-default':
+    value => 'current'
+  }
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
@@ -116,6 +130,10 @@ node default {
   include ruby::1_9_3
   include ruby::2_0_0
 
+  class { 'ruby::global':
+    version => '1.9.3'
+  }
+
   nodejs::module { 'coffee-script':
     node_version => 'v0.10',
     ensure => '1.6.3',
@@ -123,6 +141,7 @@ node default {
 
   # browsers
   include chrome
+  include chrome::dev
   include firefox
 
   # general development tools
@@ -131,7 +150,7 @@ node default {
   include heroku
   class { 'intellij':
     edition => 'ultimate',
-    version => '12.1.4'
+    version => '12.1.6'
   }
   include intellij_customisations
   include eclipse::java
@@ -161,6 +180,7 @@ node default {
   include rsa_securid
   include silverlight
   include keyremap4macbook
+  include keyremap4macbook::login_item
   # include gpgtools
 
   # command line enhancements
