@@ -85,7 +85,7 @@ node default {
     value  => 'Toby Clemson'
   }
 
-  git::config::global { 'push-default':
+  git::config::global { 'push.default':
     value => 'current'
   }
 
