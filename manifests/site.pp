@@ -181,6 +181,7 @@ node default {
   include keyremap4macbook::login_item
   # include gpgtools
   include vmware::view
+  include lync
 
   # command line enhancements
   include terminal_customisations
