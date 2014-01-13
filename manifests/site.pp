@@ -180,6 +180,7 @@ node default {
   include keyremap4macbook
   include keyremap4macbook::login_item
   # include gpgtools
+  include vmware::view
 
   # command line enhancements
   include terminal_customisations

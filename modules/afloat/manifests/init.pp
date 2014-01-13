@@ -22,7 +22,7 @@ class afloat(
     ensure => present,
     url => $afloat_download_url,
     checksum => false,
-    src_target => $afloat_cache_dir,
+    src_target => $afloat_cache_dir,o
     extension => 'zip',
     target => $afloat_cache_dir,
     require => File[$afloat_cache_dir]
