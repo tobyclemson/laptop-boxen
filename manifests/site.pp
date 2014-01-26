@@ -207,6 +207,7 @@ node default {
   include transmission
   include vlc
   include cyberduck
+  include hipchat
   include libreoffice
   class { 'libreoffice::languagepack': locale => 'en-GB' }
 }
