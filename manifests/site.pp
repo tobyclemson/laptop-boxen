@@ -195,6 +195,9 @@ node default {
   include ctags
   include tmux
 
+  # miscellaneous
+  include arduino
+
   # applications
   include steam
   include evernote
