@@ -316,6 +316,11 @@ GITHUBTARBALL
     ohmyzsh (0.0.1)
 
 GITHUBTARBALL
+  remote: ngs/puppet-arduino
+  specs:
+    arduino (1.0.1)
+
+GITHUBTARBALL
   remote: pebbleit/puppet-macdefaults
   specs:
     macdefaults (0.0.1)
@@ -334,6 +339,7 @@ DEPENDENCIES
   adium (= 1.2.0)
   alfred (= 1.1.7)
   archive (>= 0)
+  arduino (= 1.0.1)
   autoconf (= 1.0.0)
   autojump (= 1.0.0)
   boxen (= 3.3.5)
