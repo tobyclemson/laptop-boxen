@@ -158,6 +158,7 @@ node default {
   include mysql
   include mongodb
   include couchdbx
+  include oracle_sqldeveloper
 
   # text editors
   include emacs
