@@ -104,7 +104,8 @@ node default {
       'gpgme',
       'tree',
       'sbt',
-      'ctags-exuberant'
+      'ctags-exuberant',
+      'nmap'
     ]:
   }
 
