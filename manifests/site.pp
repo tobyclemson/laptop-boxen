@@ -94,26 +94,12 @@ node default {
     fail('Please enable full disk encryption and try again')
   }
 
-  # node versions
-  include nodejs::v0_6
-  include nodejs::v0_8
-  include nodejs::v0_10
-
-  # default ruby versions
-  ruby::version { '1.9.3': }
-  ruby::version { '2.0.0': }
-  ruby::version { '2.1.0': }
-  ruby::version { '2.1.1': }
-  ruby::version { '2.1.2': }
-
   # common, useful packages
   package {
     [
       'ack',
       'findutils',
       'gnu-tar',
-      'gnupg',
-      'gpgme',
       'tree',
       'sbt',
       'ctags-exuberant',
@@ -130,6 +116,16 @@ node default {
   include java
   include clojure
   include python
+
+  include nodejs::v0_6
+  include nodejs::v0_8
+  include nodejs::v0_10
+
+  ruby::version { '1.9.3': }
+  ruby::version { '2.0.0': }
+  ruby::version { '2.1.0': }
+  ruby::version { '2.1.1': }
+  ruby::version { '2.1.2': }
 
   class { 'ruby::global':
     version => '1.9.3'
@@ -183,7 +179,6 @@ node default {
   include silverlight
   include keyremap4macbook
   include keyremap4macbook::login_item
-  # include gpgtools
   include vmware::view
   include lync
 
