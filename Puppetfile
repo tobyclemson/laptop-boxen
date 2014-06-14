@@ -26,11 +26,6 @@ def dev(name, *args)
   mod name, :path => "#{ENV['HOME']}/src/boxen/puppet-#{name}"
 end
 
-# Used to manage archive files. Required.
-mod "archive",
-  :ref => "3d37b476685c94a45d771466b473a220b8b9d3b4",
-  :git => "https://github.com/camptocamp/puppet-archive.git"
-
 # Includes many of our custom types and providers, as well as global
 # config. Required.
 
