@@ -8,14 +8,10 @@
 # them in hiera/{github_login}.yaml
 
 :backends:
-  - yaml
   - gpg
-:yaml:
-  :datadir: "%{::boxen_repodir}/hiera"
 :gpg:
-  :datadir: "%{::boxen_repodir}/config/secrets"
+  :datadir: "%{::boxen_home}/repo/config/secrets"
 :hierarchy:
-  - "users/%{github_login}"
   - "%{module_name}"
   - common
 
