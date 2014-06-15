@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "boxen",                  "~> 2.6"
 gem "hiera",                  "~> 1.3.3"
-gem "hiera-gpg",              "~> 1.1.0"
+gem "hiera-eyaml",            "~> 2.0.2"
 gem "librarian-puppet",       "~> 1.0.2"
 gem "puppet",                 "3.6.1"
 gem "puppet-lint",            "0.3.2"
