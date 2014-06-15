@@ -218,6 +218,7 @@ node default {
   include vlc
   include cyberduck
   include hipchat
+  include gpgtools
   include libreoffice
   class { 'libreoffice::languagepack': locale => "en-GB" }
 }
