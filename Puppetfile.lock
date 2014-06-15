@@ -54,6 +54,11 @@ GITHUBTARBALL
     cyberduck (1.0.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-dash
+  specs:
+    dash (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (1.0.1)
@@ -109,6 +114,11 @@ GITHUBTARBALL
     googledrive (1.0.2)
 
 GITHUBTARBALL
+  remote: boxen/puppet-gpgtools
+  specs:
+    gpgtools (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-heroku
   specs:
     heroku (2.1.1)
@@ -147,11 +157,6 @@ GITHUBTARBALL
   remote: boxen/puppet-kindle
   specs:
     kindle (1.0.1)
-
-GITHUBTARBALL
-  remote: boxen/puppet-libreoffice
-  specs:
-    libreoffice (4.1.5)
 
 GITHUBTARBALL
   remote: boxen/puppet-mongodb
@@ -338,6 +343,11 @@ GITHUBTARBALL
   specs:
     module-data (0.0.3)
 
+GITHUBTARBALL
+  remote: tobyclemson/puppet-libreoffice
+  specs:
+    libreoffice (4.1.6)
+
 DEPENDENCIES
   adium (= 1.4.0)
   alfred (= 1.2.0)
@@ -350,6 +360,7 @@ DEPENDENCIES
   couchdbx (= 1.3.0)
   ctags (= 1.0.0)
   cyberduck (= 1.0.1)
+  dash (= 1.0.0)
   dnsmasq (= 1.0.1)
   dropbox (= 1.2.0)
   eclipse (= 2.3.0)
@@ -361,6 +372,7 @@ DEPENDENCIES
   git (= 2.4.0)
   go (= 1.1.0)
   googledrive (= 1.0.2)
+  gpgtools (= 1.0.1)
   heroku (= 2.1.1)
   hipchat (= 1.1.3)
   homebrew (= 1.9.3)
@@ -370,7 +382,7 @@ DEPENDENCIES
   java (= 1.5.0)
   keyremap4macbook (= 1.1.0)
   kindle (= 1.0.1)
-  libreoffice (= 4.1.5)
+  libreoffice (= 4.1.6)
   lync (= 1.3.0)
   macdefaults (= 0.0.1)
   module-data (= 0.0.3)
