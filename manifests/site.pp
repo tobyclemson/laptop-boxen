@@ -191,6 +191,7 @@ node default {
   include keyremap4macbook::login_item
   include vmware::view
   include lync
+  include dash
 
   # command line enhancements
   include terminal_customisations
