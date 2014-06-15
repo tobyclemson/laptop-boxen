@@ -57,12 +57,14 @@ node default {
   include osx::global::enable_keyboard_control_access
   include osx::global::expand_print_dialog
   include osx::global::expand_save_dialog
+  include osx::global::tap_to_click
+  include osx::global::enable_standard_function_keys
   include osx::global::disable_remote_control_ir_receiver
   include osx::global::key_repeat_rate
   class { 'osx::global::key_repeat_delay': delay => 10 }
 
   include osx::dock::autohide
-  class { 'osx::dock::icon_size': size => 36 }
+  include osx::dock::icon_size
 
   include osx::finder::show_all_on_desktop
   include osx::finder::empty_trash_securely
@@ -71,6 +73,14 @@ node default {
   include osx::disable_app_quarantine
   include osx::no_network_dsstores
   include osx::software_update
+  include osx::keyboard::capslock_to_control
+
+  class { 'osx::dock::hot_corners':
+    top_right => "Application Windows",
+    top_left => "Mission Control",
+    bottom_left => "Put Display to Sleep",
+    bottom_right => "Desktop",
+  }
 
   # core modules, needed for most things
   include dnsmasq
@@ -171,7 +181,6 @@ node default {
   include alfred
   include alfred_customisations
   include caffeine
-  # include afloat
   include sizeup
   include sizeup_customisations
   include onepassword
@@ -188,10 +197,8 @@ node default {
   include zsh
   include zsh_customisations
   include screen
-  include dpkg
   include wget
   include autojump
-  include scons
   include ctags
   include tmux
 
