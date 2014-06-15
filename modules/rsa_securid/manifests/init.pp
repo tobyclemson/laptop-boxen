@@ -36,7 +36,8 @@ class rsa_securid(
   exec { 'fetch-securid-utils':
     command => "wget $securid_utils_dmg_url -O $securid_utils_dmg",
     require => File[$securid_temp_dir],
-    unless => $securid_utils_dmg_test
+    unless => $securid_utils_dmg_test,
+    require => Package['wget']
   }
 
   exec { 'open-securid-utils':
