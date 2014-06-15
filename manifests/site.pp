@@ -99,6 +99,7 @@ node default {
   package {
     [
       'ack',
+      'wget',
       'findutils',
       'gnu-tar',
       'tree',
