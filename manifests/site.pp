@@ -161,7 +161,7 @@ node default {
     version => '13'
   }
   include intellij_customisations
-  include eclipse::java
+  # include eclipse::java
 
   # databases
   include postgresql
