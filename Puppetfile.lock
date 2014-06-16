@@ -114,11 +114,6 @@ GITHUBTARBALL
     googledrive (1.0.2)
 
 GITHUBTARBALL
-  remote: boxen/puppet-gpgtools
-  specs:
-    gpgtools (1.0.1)
-
-GITHUBTARBALL
   remote: boxen/puppet-heroku
   specs:
     heroku (2.1.1)
@@ -344,6 +339,11 @@ GITHUBTARBALL
     module-data (0.0.3)
 
 GITHUBTARBALL
+  remote: tobyclemson/puppet-gpgtools
+  specs:
+    gpgtools (1.0.2)
+
+GITHUBTARBALL
   remote: tobyclemson/puppet-libreoffice
   specs:
     libreoffice (4.1.6)
@@ -372,7 +372,7 @@ DEPENDENCIES
   git (= 2.4.0)
   go (= 1.1.0)
   googledrive (= 1.0.2)
-  gpgtools (= 1.0.1)
+  gpgtools (= 1.0.2)
   heroku (= 2.1.1)
   hipchat (= 1.1.3)
   homebrew (= 1.9.3)
