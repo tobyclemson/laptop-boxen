@@ -14,6 +14,11 @@ GITHUBTARBALL
     alfred (1.2.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-arduino
+  specs:
+    arduino (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-autojump
   specs:
     autojump (1.0.0)
@@ -37,11 +42,6 @@ GITHUBTARBALL
   remote: boxen/puppet-clojure
   specs:
     clojure (1.2.0)
-
-GITHUBTARBALL
-  remote: boxen/puppet-couchdbx
-  specs:
-    couchdbx (1.3.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-ctags
@@ -309,11 +309,6 @@ GITHUBTARBALL
     ohmyzsh (0.0.1)
 
 GITHUBTARBALL
-  remote: ngs/puppet-arduino
-  specs:
-    arduino (1.0.1)
-
-GITHUBTARBALL
   remote: pebbleit/puppet-macdefaults
   specs:
     macdefaults (0.0.1)
@@ -332,6 +327,11 @@ GITHUBTARBALL
   remote: ripienaar/puppet-module-data
   specs:
     module-data (0.0.3)
+
+GITHUBTARBALL
+  remote: tobyclemson/puppet-couchdbx
+  specs:
+    couchdbx (1.3.0)
 
 GITHUBTARBALL
   remote: tobyclemson/puppet-eclipse
