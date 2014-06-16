@@ -4,8 +4,8 @@ class onepassword_customisations(
   require onepassword
 
   $home_dir = "/Users/${::boxen_user}"
-  $one_password_dir = "${home_dir}/Library/Application Support/1 Password 4"
-  $one_password_license_dir = "${one_password_dir_dir}/License"
+  $one_password_dir = "${home_dir}/Library/Application Support/1Password 4"
+  $one_password_license_dir = "${one_password_dir}/License"
 
   file { [$one_password_dir, $one_password_license_dir]:
     ensure => directory,
