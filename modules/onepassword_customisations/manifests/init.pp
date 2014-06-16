@@ -1,29 +1,19 @@
 class onepassword_customisations(
-  $person,
-  $serial
+  $license,
 ) {
   require onepassword
 
   $home_dir = "/Users/${::boxen_user}"
-  $onepassword_plist = "${home_dir}/Library/Preferences/ws.agile.1Password.plist"
+  $one_password_dir = "${home_dir}/Library/Application Support/1 Password 4"
+  $one_password_license_dir = "${one_password_dir_dir}/License"
 
-  plist::file { $onepassword_plist:
-    mode => '0600',
+  file { [$one_password_dir, $one_password_license_dir]:
+    ensure => directory,
   }
 
-  plist::entry { 'Install 1Password license person':
-    target => $onepassword_plist,
-    path => ":'License':'Person'",
-    type => 'string',
-    value => $person,
-    require => Plist::File[$onepassword_plist]
-  }
-
-  plist::entry { 'Install 1Password license serial':
-    target => $onepassword_plist,
-    path => ":'License':'Serial'",
-    type => 'string',
-    value => $serial,
-    require => Plist::File[$onepassword_plist]
+  file { "${one_password_license_dir}/License.onepassword-license":
+    ensure => 'present',
+    content => $license,
+    require => File[$one_password_license_dir],
   }
 }
