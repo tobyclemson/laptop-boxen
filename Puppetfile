@@ -109,4 +109,4 @@ github "oracle_sqldeveloper", "0.0.3", :repo => "anthonywu/puppet-oracle-sqldeve
 github "eclipse",             "2.4.0", :repo => "tobyclemson/puppet-eclipse"
 github "libreoffice",         "4.1.6", :repo => "tobyclemson/puppet-libreoffice"
 github "gpgtools",            "1.0.2", :repo => "tobyclemson/puppet-gpgtools"
-github "couchdbx",            "1.3.0", :repo => "tobyclemson/puppet-couchdbx"
+github "couchdbx",            "1.3.1", :repo => "tobyclemson/puppet-couchdbx"
