@@ -8,6 +8,8 @@ class rsa_securid(
   $securid_temp_dir = "$temp_dir/rsa_securid"
 
   $securid_token_dmg_url = "ftp://ftp.rsasecurity.com/pub/agents/RSASecurIDMac412.dmg"
+  $securid_token_dmg = "$securid_temp_dir/rsa_securid.dmg"
+  $securid_token_dmg_test = "test -f $securid_token_dmg"
   $securid_token_importer = "$securid_temp_dir/tokenimporter"
   $securid_token_importer_test = "test -f $securid_token_importer"
 
@@ -23,10 +25,17 @@ class rsa_securid(
   $securid_identity_installed_receipt = "$securid_temp_dir/token-installed"
   $securid_identity_installed_test = "test -f $securid_identity_installed_receipt"
 
+  exec { 'fetch-securid':
+    command => "wget $securid_token_dmg_url -O $securid_token_dmg",
+    require => [Package['wget'], File[$securid_temp_dir]],
+    unless => $securid_token_dmg_test,
+  }
+
   package { 'rsa-securid':
     provider => 'pkgdmg',
-    source => $securid_token_dmg_url,
-    ensure => 'installed'
+    source => $securid_token_dmg,
+    ensure => 'installed',
+    require => Exec['fetch-securid'],
   }
 
   file { [$temp_dir, $securid_temp_dir]:
