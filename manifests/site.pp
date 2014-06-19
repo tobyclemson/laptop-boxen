@@ -115,7 +115,7 @@ node default {
       'sbt',
       'ctags-exuberant',
       'nmap',
-      'poppler'
+      'ghostscript'
     ]:
   }
 
