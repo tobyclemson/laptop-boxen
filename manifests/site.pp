@@ -114,7 +114,8 @@ node default {
       'tree',
       'sbt',
       'ctags-exuberant',
-      'nmap'
+      'nmap',
+      'poppler'
     ]:
   }
 
