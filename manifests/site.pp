@@ -229,8 +229,8 @@ node default {
   s3storage::root { '/cloud': }
 
   s3storage::account { 'boxen':
-    aws_id     => hiera('aws:access_key_id'),
-    aws_secret => hiera('aws:secret_access_key'),
+    aws_id     => hiera('aws::access_key_id'),
+    aws_secret => hiera('aws::secret_access_key'),
     root       => '/cloud',
     group      => root,
   }
