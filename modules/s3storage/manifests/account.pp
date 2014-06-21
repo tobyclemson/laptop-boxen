@@ -9,8 +9,8 @@ define s3storage::account($aws_id, $aws_secret, $root, $group) {
 
   file { "${root}/s3storage-${title}.creds":
     content => template('s3storage/creds.erb'),
-    owner   => 'root',
+    owner   => $::boxen_user,
     group   => 'staff',
-    mode    => '0440',
+    mode    => '0400',
   }
 }
