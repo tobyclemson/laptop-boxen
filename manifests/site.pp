@@ -116,7 +116,6 @@ node default {
       'ctags-exuberant',
       'nmap',
       'ghostscript',
-      's3fs'
     ]:
   }
 
@@ -194,6 +193,7 @@ node default {
   include vmware::view
   include lync
   include dash
+  include s3storage
 
   # command line enhancements
   include terminal_customisations
