@@ -15,6 +15,7 @@
   :pkcs7_public_key: "%{::boxen_home}/repo/keys/public_key.pkcs7.pem"
 :hierarchy:
   - "%{module_name}"
+  - aws
   - common
 
 # Many modules make their own hiera data available through the use of
