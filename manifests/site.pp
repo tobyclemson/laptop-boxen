@@ -193,6 +193,7 @@ node default {
   include vmware::view
   include lync
   include dash
+  include osxfuse
 
   # command line enhancements
   include terminal_customisations
