@@ -1,7 +1,7 @@
 define s3storage::root() {
   file { $title:
     ensure => 'directory',
-    owner  => $::boxen_user,
+    owner  => 'root',
     group  => 'staff',
     mode   => '0555',
   }
