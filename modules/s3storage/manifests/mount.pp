@@ -4,21 +4,21 @@ define s3storage::mount($aws_account, $root) {
   $passwd_file = "${root}/s3storage-${aws_account}.creds"
 
   file { $mount_dir:
-    ensure  => directory,
-    owner   => root,
-    group   => root,
+    ensure  => 'directory',
+    owner   => 'root',
+    group   => 'staff',
     mode    => '0777',
     require => File["${root}/${aws_account}"]
   }
 
   file { $cache_dir:
-    ensure  => directory,
-    owner   => root,
-    group   => root,
+    ensure  => 'directory',
+    owner   => 'root',
+    group   => 'staff',
     mode    => '0700',
   }
 
-  exec { "mount $title":
+  exec { "mount ${title}":
     command => "s3fs $title $mount_dir -o passwd_file=$passwd_file -o allow_other -o use_cache=$cache_dir",
     onlyif  => "test -n `/bin/df $mount_dir | awk '/s3fs/ { print $1}'`",
     require => [

@@ -1,8 +1,8 @@
 define s3storage::root() {
   file { $title:
-    ensure => directory,
+    ensure => 'directory',
     owner  => 'root',
-    group  => 'root',
+    group  => 'staff',
     mode   => '0555',
   }
 }

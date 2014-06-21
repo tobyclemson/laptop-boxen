@@ -232,7 +232,7 @@ node default {
     aws_id     => hiera('aws::access_key_id'),
     aws_secret => hiera('aws::secret_access_key'),
     root       => '/cloud',
-    group      => root,
+    group      => 'staff',
   }
 
   s3storage::mount { 'boxen-onetime':
