@@ -1,6 +1,16 @@
 class s3storage {
   package { 's3fs': }
 
+  sudoers { 's3fs':
+    users    => $::boxen_user,
+    hosts    => 'ALL',
+    commands => [
+      '(ALL) NOPASSWD : /bin/cp -rfX /opt/boxen/homebrew/Cellar/fuse4x-kext/0.9.2/Library/Extensions/fuse4x.kext /Library/Extensions',
+      '/bin/chmod +s /Library/Extensions/fuse4x.kext/Support/load_fuse4x'
+    ],
+    type     => 'user_spec',
+  }
+
   exec { 'copy-fuse4x':
     command => 'sudo /bin/cp -rfX /opt/boxen/homebrew/Cellar/fuse4x-kext/0.9.2/Library/Extensions/fuse4x.kext /Library/Extensions',
     require => Package['s3fs'],
