@@ -3,6 +3,6 @@ define s3storage::root() {
     ensure => directory,
     owner  => 'root',
     group  => 'root',
-    mode   => '0555',
+    mode   => '0555,
   }
 }
