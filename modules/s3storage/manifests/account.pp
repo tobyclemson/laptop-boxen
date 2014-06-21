@@ -2,7 +2,7 @@ define s3storage::account($aws_id, $aws_secret, $root, $group) {
   file { "${root}/${$title}":
     ensure  => 'directory',
     owner   => 'root',
-    group   => $group,
+    group   => 'staff',
     mode    => '0550',
     require => File[$root],
   }
@@ -11,6 +11,6 @@ define s3storage::account($aws_id, $aws_secret, $root, $group) {
     content => template('s3storage/creds.erb'),
     owner   => 'root',
     group   => 'staff',
-    mode    => '0400',
+    mode    => '0440',
   }
 }

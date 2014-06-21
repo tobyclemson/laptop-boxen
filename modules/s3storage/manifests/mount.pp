@@ -15,7 +15,7 @@ define s3storage::mount($aws_account, $root) {
     ensure  => 'directory',
     owner   => 'root',
     group   => 'staff',
-    mode    => '0700',
+    mode    => '0770',
   }
 
   exec { "mount ${title}":
