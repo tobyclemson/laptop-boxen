@@ -5,7 +5,7 @@ define s3storage::mount($aws_account, $root) {
 
   file { $mount_dir:
     ensure  => 'directory',
-    owner   => 'root',
+    owner   => $::boxen_user,
     group   => 'staff',
     mode    => '0777',
     require => File["${root}/${aws_account}"]
@@ -13,7 +13,7 @@ define s3storage::mount($aws_account, $root) {
 
   file { $cache_dir:
     ensure  => 'directory',
-    owner   => 'root',
+    owner   => $::boxen_user,
     group   => 'staff',
     mode    => '0770',
   }
