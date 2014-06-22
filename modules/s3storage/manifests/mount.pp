@@ -22,7 +22,7 @@ define s3storage::mount($aws_account, $root) {
     users    => $::boxen_user,
     hosts    => 'ALL',
     commands => [
-      "(ALL) NOPASSWD : /opt/boxen/homebrew/bin/s3fs ${title} ${mount_dir} -o passwd_file=${passwd_file} -o allow_other -o use_cache=${cache_dir}"
+                 "(ALL) NOPASSWD : /opt/boxen/homebrew/bin/s3fs ${title} ${mount_dir} -o passwd_file=${passwd_file} -o allow_other -o use_cache=${cache_dir} -o connect_timeout=3600 -o readwrite_timeout=7200 -o daemon_timeout=14400"
     ],
     type     => 'user_spec',
   }
