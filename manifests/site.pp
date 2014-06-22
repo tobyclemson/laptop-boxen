@@ -226,5 +226,6 @@ node default {
   class { 'libreoffice::languagepack': locale => "en-GB" }
 
   # projects
+  include projects::all
   include private_projects
 }
