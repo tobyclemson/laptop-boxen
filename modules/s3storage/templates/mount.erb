@@ -1,0 +1,7 @@
+sudo /opt/boxen/homebrew/bin/s3fs <%= @title %> <%= @mount_dir %> \
+  -o passwd_file=<%= @passwd_file %> \
+  -o use_cache=<%= @cache_dir %> \
+  -o connect_timeout=3600 \
+  -o readwrite_timeout=7200 \
+  -o daemon_timeout=14400 \
+  -o allow_other
