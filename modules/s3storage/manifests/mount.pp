@@ -22,14 +22,14 @@ define s3storage::mount($aws_account, $root) {
     users    => $::boxen_user,
     hosts    => 'ALL',
     commands => [
-      "(ALL) NOPASSWD : /opt/boxen/homebrew/bin/s3fs $title $mount_dir -o passwd_file=$passwd_file -o allow_other -o use_cache=$cache_dir"
+      "(ALL) NOPASSWD : /opt/boxen/homebrew/bin/s3fs ${title} ${mount_dir} -o passwd_file=${passwd_file} -o allow_other -o use_cache=${cache_dir}"
     ],
     type     => 'user_spec',
   }
 
   exec { "mount ${title}":
-    command => "sudo /opt/boxen/homebrew/bin/s3fs $title $mount_dir -o passwd_file=$passwd_file -o allow_other -o use_cache=$cache_dir",
-    onlyif  => "test -n `/bin/df $mount_dir | awk '/s3fs/ { print $1 }'`",
+    command => "sudo /opt/boxen/homebrew/bin/s3fs ${title} ${mount_dir} -o passwd_file=${passwd_file} -o allow_other -o use_cache=${cache_dir}",
+    onlyif  => "test -n \"`/bin/df ${mount_dir} | awk '/s3fs/ { print \$1 }'`\"",
     require => [
       File[$mount_dir],
       File[$cache_dir],
