@@ -1,9 +1,10 @@
 class rsa_securid(
   $identity,
-  $password
+  $password,
+  $cache_dir = "${::boxen_home}/cache"
 ) {
   $home_dir = "/Users/${::boxen_user}"
-  $temp_dir = "$boxen_home/tmp"
+  $temp_dir = $cache_dir
 
   $securid_temp_dir = "$temp_dir/rsa_securid"
 
