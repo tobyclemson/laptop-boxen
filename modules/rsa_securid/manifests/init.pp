@@ -39,8 +39,15 @@ class rsa_securid(
     require => Exec['fetch-securid'],
   }
 
-  file { [$temp_dir, $securid_temp_dir]:
-    ensure => 'directory',
+  if !defined(File[$temp_dir]) {
+    file { $temp_dir:
+      ensure => 'directory',
+    }
+  }
+
+  file { $securid_temp_dir:
+    ensure  => 'directory',
+    require => File[$temp_dir],
   }
 
   exec { 'fetch-securid-utils':

@@ -193,6 +193,7 @@ node default {
   include vmware::view
   include lync
   include dash
+  include gpgtools
   include s3storage
 
   # command line enhancements
@@ -221,7 +222,6 @@ node default {
   include vlc
   include cyberduck
   include hipchat
-  include gpgtools
   include libreoffice
   class { 'libreoffice::languagepack': locale => "en-GB" }
 

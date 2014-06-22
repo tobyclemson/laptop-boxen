@@ -14,8 +14,15 @@ class afloat(
     ensure => 'installed'
   }
 
+  if !defined(File[$temp_dir]) {
+    file { $temp_dir:
+      ensure => 'directory',
+    }
+  }
+
   file { $afloat_cache_dir:
-    ensure => 'directory'
+    ensure  => 'directory',
+    require => File[$temp_dir],
   }
 
   archive { 'afloat':
