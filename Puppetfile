@@ -3,6 +3,7 @@
 # It works a lot like Bundler. We provide some core modules by
 # default. This ensures at least the ability to construct a basic
 # environment.
+forge "https://forge.puppetlabs.com"
 
 # Shortcut for a module from GitHub's boxen organization
 def github(name, *args)
@@ -25,6 +26,10 @@ end
 def dev(name, *args)
   mod name, :path => "#{ENV['HOME']}/src/boxen/puppet-#{name}"
 end
+
+# Used to extract various types of archive
+
+mod "gini/archive", "0.2.0"
 
 # Includes many of our custom types and providers, as well as global
 # config. Required.
@@ -106,7 +111,6 @@ github "macdefaults",         "0.0.1", :repo => "pebbleit/puppet-macdefaults"
 github "ohmyzsh",             "0.0.1", :repo => "haelmy/puppet-ohmyzsh"
 github "lync",                "1.3.0", :repo => "dieterdemeyer/puppet-lync"
 github "oracle_sqldeveloper", "0.0.3", :repo => "anthonywu/puppet-oracle-sqldeveloper"
-github "archive",             "0.2.0", :repo => "gini/puppet-archive"
 github "eclipse",             "2.4.0", :repo => "tobyclemson/puppet-eclipse"
 github "libreoffice",         "4.1.6", :repo => "tobyclemson/puppet-libreoffice"
 github "gpgtools",            "1.0.2", :repo => "tobyclemson/puppet-gpgtools"
