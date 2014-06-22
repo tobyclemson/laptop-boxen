@@ -23,7 +23,7 @@ define s3storage::mount($aws_account, $root) {
   sudoers { "s3fs-${aws_account}-mount":
     users    => $::boxen_user,
     hosts    => 'ALL',
-    commands => ["(ALL) NOPASSWD : ${mount_command}"],
+    commands => ['(ALL) NOPASSWD : /opt/boxen/homebrew/bin/s3fs'],
     type     => 'user_spec',
   }
 
