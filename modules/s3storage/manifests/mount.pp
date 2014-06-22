@@ -18,7 +18,7 @@ define s3storage::mount($aws_account, $root) {
     mode    => '0770',
   }
 
-  sudoers { "s3fs-${aws_account}":
+  sudoers { "s3fs-${aws_account}-mount":
     users    => $::boxen_user,
     hosts    => 'ALL',
     commands => [
@@ -35,7 +35,7 @@ define s3storage::mount($aws_account, $root) {
       File[$cache_dir],
       Package['s3fs'],
       File[$passwd_file],
-      Sudoers["s3fs-${aws_account}"]
+      Sudoers["s3fs-${aws_account}-mount"]
     ],
   }
 }
