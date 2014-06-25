@@ -2,7 +2,7 @@ class projects::presentations {
   $presentation_dir = "/Users/${::boxen_user}/Code/presentations"
 
   file { $presentation_dir:
-    ensure  => 'present',
+    ensure  => 'directory',
     require => File['code'],
   }
 
