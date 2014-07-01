@@ -213,6 +213,7 @@ node default {
   include steam
   include evernote
   include omnigraffle::pro
+  include omnigraffle_customisations
   include dropbox
   include googledrive
   include kindle
