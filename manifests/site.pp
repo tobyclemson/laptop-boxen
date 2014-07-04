@@ -192,7 +192,6 @@ node default {
   include keyremap4macbook::login_item
   include vmware::view
   include lync
-  include dash
   include gpgtools
   include s3storage
 
