@@ -23,7 +23,7 @@ class omnigraffle_customisations(
     ensure => 'directory',
   }
 
-  file { "${license_dir}/Omnigraffle-762283.omnilicense":
+  file { "${license_dir}/OmniGraffle-762283.omnilicense":
     ensure  => 'present',
     content => template("omnigraffle_customisations/license.plist.erb"),
   }
