@@ -154,7 +154,6 @@ node default {
 
   # browsers
   include chrome
-  include chrome::dev
   include firefox
 
   # general development tools
