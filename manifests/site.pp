@@ -116,6 +116,7 @@ node default {
       'ctags-exuberant',
       'nmap',
       'ghostscript',
+      'gradle'
     ]:
   }
 
