@@ -65,7 +65,6 @@ github "xquartz",     "1.1.1"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
-github "java",                "1.5.0"
 github "intellij",            "1.5.1"
 github "chrome",              "1.1.2"
 github "firefox",             "1.2.1"
