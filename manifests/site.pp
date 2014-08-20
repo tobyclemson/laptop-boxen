@@ -130,7 +130,7 @@ node default {
   # languages
   package { 'java': provider => 'brewcask' }
 
-  include java
+  # include java
   include clojure
   include python
 
