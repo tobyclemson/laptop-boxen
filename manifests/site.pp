@@ -112,11 +112,9 @@ node default {
       'findutils',
       'gnu-tar',
       'tree',
-      'sbt',
       'ctags-exuberant',
       'nmap',
-      'ghostscript',
-      'gradle'
+      'ghostscript'
     ]:
   }
 
@@ -127,10 +125,18 @@ node default {
 
   include brewcask
 
+  # build tools
+  package {
+    [
+      'sbt',
+      'gradle',
+      'leiningen'
+    ]:
+  }
+
   # languages
   package { 'java': provider => 'brewcask' }
 
-  include clojure
   include python
 
   include nodejs::v0_6
