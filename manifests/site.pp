@@ -125,7 +125,11 @@ node default {
     target => $boxen::config::repodir
   }
 
+  include brewcask
+
   # languages
+  package { 'java': provider => 'brewcask' }
+
   include java
   include clojure
   include python
