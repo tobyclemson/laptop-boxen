@@ -44,11 +44,6 @@ GITHUBTARBALL
     chrome (1.1.2)
 
 GITHUBTARBALL
-  remote: boxen/puppet-clojure
-  specs:
-    clojure (1.2.0)
-
-GITHUBTARBALL
   remote: boxen/puppet-ctags
   specs:
     ctags (1.0.0)
@@ -357,7 +352,6 @@ DEPENDENCIES
   brewcask (= 0.0.4)
   caffeine (= 1.0.0)
   chrome (= 1.1.2)
-  clojure (= 1.2.0)
   couchdbx (= 1.3.1)
   ctags (= 1.0.0)
   cyberduck (= 1.0.1)
