@@ -52,6 +52,8 @@ Service {
 
 Homebrew::Formula <| |> -> Package <| |>
 
+Sudo::Defaults <| |> -> Package <| |>
+
 node default {
   # os defaults
   include osx::global::enable_keyboard_control_access
@@ -80,6 +82,11 @@ node default {
     top_left => "Mission Control",
     bottom_left => "Put Display to Sleep",
     bottom_right => "Desktop",
+  }
+
+  # sudo defaults
+  sudo::defaults { 'Defaults':
+    parameters => ['timestamp_timeout=20']
   }
 
   # core modules, needed for most things
