@@ -52,7 +52,7 @@ Service {
 
 Homebrew::Formula <| |> -> Package <| |>
 
-Sudo::Defaults <| |> -> Package <| |>
+Sudo::Defaults['Defaults'] -> Package <| provider == 'brewcask' |>
 
 node default {
   # os defaults
@@ -86,7 +86,7 @@ node default {
 
   # sudo defaults
   sudo::defaults { 'Defaults':
-    parameters => ['timestamp_timeout=20']
+    parameters => ['timestamp_timeout=20'],
   }
 
   # core modules, needed for most things
