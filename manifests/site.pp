@@ -191,6 +191,8 @@ node default {
   include couchdbx
   include oracle_sqldeveloper
 
+  package { 'pgadmin3': provider => 'brewcask'}
+
   # text editors
   include emacs
   include emacs_customisations
