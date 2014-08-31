@@ -169,6 +169,8 @@ node default {
     ensure => '1.6.3',
   }
 
+  package { 'antlr': }
+
   # browsers
   include chrome
   include firefox
