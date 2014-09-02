@@ -121,7 +121,9 @@ node default {
       'tree',
       'ctags-exuberant',
       'nmap',
-      'ghostscript'
+      'ghostscript',
+      'rpm',
+      'dpkg'
     ]:
   }
 
