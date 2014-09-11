@@ -2,8 +2,6 @@ class alfred_customisations(
   $code,
   $email
 ) {
-  require alfred
-
   $home_dir = "/Users/$::boxen_user"
 
   $alfred_app_support_dir = "${home_dir}/Library/Application Support/Alfred 2"
