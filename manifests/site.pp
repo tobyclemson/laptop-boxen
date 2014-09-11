@@ -205,8 +205,10 @@ node default {
   include sublime_text_2
 
   # system utilities
-  include alfred
-  include alfred_customisations
+  package { 'alfred': provider => 'brewcask' }
+  class { 'alfred_customisations':
+    require => Package['alfred']
+  }
   include caffeine
   include sizeup
   include sizeup_customisations
