@@ -248,8 +248,8 @@ node default {
   include adium
   include transmission
   include vlc
-  include cyberduck
   include hipchat
+  package { 'cyberduck': provider => 'brewcask' }
   package { 'libreoffice': provider => 'brewcask' }
 
   # projects
