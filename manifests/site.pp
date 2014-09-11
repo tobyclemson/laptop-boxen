@@ -250,8 +250,7 @@ node default {
   include vlc
   include cyberduck
   include hipchat
-  include libreoffice
-  class { 'libreoffice::languagepack': locale => "en-GB" }
+  package { 'libreoffice': provider => 'brewcask' }
 
   # projects
   include projects::all
