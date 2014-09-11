@@ -252,5 +252,5 @@ node default {
 
   # projects
   include projects::all
-  # include private_projects
+  include private_projects
 }
