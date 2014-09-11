@@ -218,9 +218,8 @@ node default {
   include keyremap4macbook
   include keyremap4macbook::login_item
   include vmware::view
-  package { 'gpgtools': provider => 'brewcask' }
-  package { 'lync': provider => 'brewcask' }
   include s3storage
+  package { 'gpgtools': provider => 'brewcask' }
 
   # command line enhancements
   include terminal_customisations
