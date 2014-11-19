@@ -182,7 +182,7 @@ node default {
   include heroku
   class { 'intellij':
     edition => 'ultimate',
-    version => '13.1.3'
+    version => '14.0.1'
   }
   include intellij_customisations
   # include eclipse::java
