@@ -108,4 +108,5 @@ github "eclipse",             "2.4.0", :repo => "tobyclemson/puppet-eclipse"
 github "couchdbx",            "1.3.2", :repo => "tobyclemson/puppet-couchdbx"
 github "omnigraffle",         "1.3.1", :repo => "tobyclemson/puppet-omnigraffle"
 github "brewcask",            "0.0.4", :repo => "phinze/puppet-brewcask"
-github "cloud_file",          "v0.0.7", :repo => "jbussdieker/puppet-cloud_file"
+
+mod "jbussdieker-cloud_file", "0.0.7"
