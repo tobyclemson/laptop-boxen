@@ -122,7 +122,8 @@ node default {
       'ctags-exuberant',
       'nmap',
       'ghostscript',
-      'dpkg'
+      'dpkg',
+      'libxml2'
     ]:
   }
 
