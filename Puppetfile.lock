@@ -1,7 +1,7 @@
 FORGE
   remote: https://forge.puppetlabs.com
   specs:
-    gini/archive (0.2.0)
+    gini-archive (0.2.0)
 
 GITHUBTARBALL
   remote: anthonywu/puppet-oracle-sqldeveloper
@@ -336,7 +336,7 @@ DEPENDENCIES
   firefox (= 1.2.1)
   foreman (= 1.2.0)
   gcc (= 2.2.0)
-  gini/archive (= 0.2.0)
+  gini-archive (= 0.2.0)
   git (= 2.5.0)
   go (= 1.1.0)
   googledrive (= 1.0.2)
@@ -381,6 +381,6 @@ DEPENDENCIES
   virtualbox (= 1.0.12)
   vlc (= 1.1.0)
   wget (= 1.0.1)
-  xquartz (= 1.1.1)
-  zsh (= 1.0.0)
   xquartz (= 1.2.1)
+  zsh (= 1.0.0)
+
