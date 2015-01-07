@@ -124,6 +124,7 @@ node default {
       'ghostscript',
       'dpkg',
       'libxml2'
+      'git-crypt'
     ]:
   }
 
@@ -173,6 +174,8 @@ node default {
 
   package { 'antlr': }
 
+  package { 'r': provider => 'brewcask'}
+
   # browsers
   include chrome
   include firefox
@@ -187,6 +190,7 @@ node default {
   }
   include intellij_customisations
   # include eclipse::java
+  package { 'rstudio': provider => 'brewcask'}
 
   # databases
   include postgresql
