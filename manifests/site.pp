@@ -123,7 +123,7 @@ node default {
       'nmap',
       'ghostscript',
       'dpkg',
-      'libxml2'
+      'libxml2',
       'git-crypt'
     ]:
   }
